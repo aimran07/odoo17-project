@@ -1,0 +1,24 @@
+# Odoo core
+odoo/
+
+# Python virtual environment
+odoo-venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Archives
+*.tar.gz
+*.zip
