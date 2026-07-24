@@ -26,6 +26,7 @@
             <group>
               <field name="street" />
               <field name="city" />
+              <field name="country" />
             </group>
           </div>
           <!-- NOTES -->
@@ -44,6 +45,7 @@
             <group>
               <field name="name" />
               <field name="email" />
+              <field name="phone" />
             </group>
           </details>
         </sheet>
