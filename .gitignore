@@ -5,7 +5,7 @@ odoo/
 odoo-venv/
 
 # Odoo config file
-*.conf
+odoo.conf
 
 # Python
 __pycache__/
