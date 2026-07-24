@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+  <record id="view_demo_record_form" model="ir.ui.view">
+    <field name="name">demo.record.form</field>
+    <field name="model">demo.record</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <!-- PERSONAL -->
+          <div class="accordion-header">
+            Personal Information
+          </div>
+          <div class="accordion-content">
+            <group>
+              <field name="name" />
+              <field name="email" />
+              <field name="phone" />
+            </group>
+          </div>
+          <!-- ADDRESS -->
+          <div class="accordion-header">
+            Address Information
+          </div>
+          <div class="accordion-content">
+            <group>
+              <field name="street" />
+              <field name="city" />
+            </group>
+          </div>
+          <!-- NOTES -->
+          <div class="accordion-header">
+            Additional Notes
+          </div>
+          <div class="accordion-content">
+            <group>
+              <field name="notes" />
+            </group>
+          </div>
+        </sheet>
+        <sheet>
+          <details>
+            <summary>Personal Information</summary>
+            <group>
+              <field name="name" />
+              <field name="email" />
+            </group>
+          </details>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_demo_record" model="ir.actions.act_window">
+    <field name="name">Demo Form</field>
+    <field name="res_model">demo.record</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem
+    id="menu_demo_root"
+    name="Demo Form" />
+
+  <menuitem
+    id="menu_demo_records"
+    parent="menu_demo_root"
+    name="Records"
+    action="action_demo_record" />
+
+</odoo>
