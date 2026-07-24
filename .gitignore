@@ -4,6 +4,9 @@ odoo/
 # Python virtual environment
 odoo-venv/
 
+# Odoo config file
+odoo.conf
+
 # Python
 __pycache__/
 *.py[cod]
