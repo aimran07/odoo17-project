@@ -1,3 +1,6 @@
+# odoo core
+odoo/
+
 # Python virtual environment
 odoo-venv/
 
