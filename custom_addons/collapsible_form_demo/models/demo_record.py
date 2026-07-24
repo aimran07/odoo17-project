@@ -11,5 +11,6 @@ class DemoRecord(models.Model):
 
     street = fields.Char()
     city = fields.Char()
+    country = fields.Char()
 
     notes = fields.Text()
