@@ -1,0 +1,2846 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hill_solution
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-17 11:19+0000\n"
+"PO-Revision-Date: 2026-07-17 11:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hill_solution
+#: model:ir.actions.report,print_report_name:hill_solution.action_invoice_report
+msgid ""
+"\n"
+"            \"'Invoice - %s' % object.name\"\n"
+"        "
+msgstr ""
+"\n"
+"            \"'Facture - %s' % object.name\"\n"
+"        "
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_document_widget.js:0
+#, python-format
+msgid "%s document(s) uploaded successfully"
+msgstr "%s document(s) téléchargé(s) avec succès"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_photo_widget.js:0
+#, python-format
+msgid "%s photo(s) uploaded successfully"
+msgstr "%s photo(s) téléchargée(s) avec succès"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_home_hill_case
+msgid "/my/cases"
+msgstr "/mes-dossiers"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_home_hill_case
+msgid "/my/invoices"
+msgstr "/mes-factures"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.invoice_report_template
+msgid ""
+"<br/>\n"
+"                        <strong>Customer :</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>Client :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.invoice_report_template
+msgid ""
+"<br/>\n"
+"                        <strong>Invoice No :</strong>"
+msgstr ""
+"<br/>\n"
+"                        <strong>N° Facture :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid ""
+"<i class=\"fa fa-arrow-left me-1\"/>\n"
+"                                        Cancel"
+msgstr ""
+"<i class=\"fa fa-arrow-left me-1\"/>\n"
+"                                        Annuler"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+msgid ""
+"<i class=\"fa fa-arrow-left me-1\"/>\n"
+"                                Back to My Invoices"
+msgstr ""
+"<i class=\"fa fa-arrow-left me-1\"/>\n"
+"                                Retour à mes factures"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-arrow-left me-1\"/>\n"
+"Back to My Cases"
+msgstr ""
+"<i class=\"fa fa-arrow-left me-1\"/>\n"
+"Retour à mes dossiers"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-book d-block mb-1\"/>\n"
+"                                        <small>Study</small>"
+msgstr ""
+"<i class=\"fa fa-book d-block mb-1\"/>\n"
+"                                        <small>Étude</small>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-calendar d-block mb-1\"/>\n"
+"                                        <small>Appointment</small>"
+msgstr ""
+"<i class=\"fa fa-calendar d-block mb-1\"/>\n"
+"                                        <small>Rendez-vous</small>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-check-circle d-block mb-1\"/>\n"
+"                                        <small>Done</small>"
+msgstr ""
+"<i class=\"fa fa-check-circle d-block mb-1\"/>\n"
+"                                        <small>Terminé</small>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                                                Download"
+msgstr ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                                                Télécharger"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                                    Download Invoice"
+msgstr ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                                    Télécharger la facture"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+msgid ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                                    Download PDF"
+msgstr ""
+"<i class=\"fa fa-download me-1\"/>\n"
+"                                    Télécharger le PDF"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-file-text d-block mb-1\"/>\n"
+"                                        <small>Invoice</small>"
+msgstr ""
+"<i class=\"fa fa-file-text d-block mb-1\"/>\n"
+"                                        <small>Facture</small>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-file-text d-block mb-1\"/>\n"
+"                                        <small>New Case</small>"
+msgstr ""
+"<i class=\"fa fa-file-text d-block mb-1\"/>\n"
+"                                        <small>Nouveau dossier</small>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+msgid ""
+"<i class=\"fa fa-file-text me-2\"/>\n"
+"                                Invoice"
+msgstr ""
+"<i class=\"fa fa-file-text me-2\"/>\n"
+"                                Facture"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-folder-open me-2\"/>\n"
+"                                Case"
+msgstr ""
+"<i class=\"fa fa-folder-open me-2\"/>\n"
+"                                Dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid ""
+"<i class=\"fa fa-folder-open me-2\"/>\n"
+"                                Submit New Case"
+msgstr ""
+"<i class=\"fa fa-folder-open me-2\"/>\n"
+"                                Soumettre un nouveau dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid ""
+"<i class=\"fa fa-map-marker d-block mb-1\"/>\n"
+"                                        <small>Visit</small>"
+msgstr ""
+"<i class=\"fa fa-map-marker d-block mb-1\"/>\n"
+"                                        <small>Visite</small>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid ""
+"<i class=\"fa fa-paper-plane me-1\"/>\n"
+"                                        Submit Case"
+msgstr ""
+"<i class=\"fa fa-paper-plane me-1\"/>\n"
+"                                        Soumettre le dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+msgid ""
+"<i class=\"fa fa-plus me-1\"/>\n"
+"                            New Case"
+msgstr ""
+"<i class=\"fa fa-plus me-1\"/>\n"
+"                            Nouveau dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "<option value=\"\">-- Select --</option>"
+msgstr "<option value=\"\">-- Sélectionner --</option>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "<small class=\"text-muted\">You can select multiple files.</small>"
+msgstr ""
+"<small class=\"text-muted\">Vous pouvez sélectionner plusieurs "
+"fichiers.</small>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Address:</strong>"
+msgstr "<strong>Adresse :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+msgid "<strong>Amount Total:</strong>"
+msgstr "<strong>Montant Total :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Company:</strong>"
+msgstr "<strong>Société :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Contact:</strong>"
+msgstr "<strong>Contact :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+msgid "<strong>Customer:</strong>"
+msgstr "<strong>Client :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>Date de facture :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Name:</strong>"
+msgstr "<strong>Nom :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>Téléphone :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Prestation Type:</strong>"
+msgstr "<strong>Type de prestation :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>SIRET:</strong>"
+msgstr "<strong>SIRET :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Service Type:</strong>"
+msgstr "<strong>Type de service :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Site Address:</strong>"
+msgstr "<strong>Adresse du site :</strong>"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "<strong>Status:</strong>"
+msgstr "<strong>Statut :</strong>"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__access_warning
+msgid "Access warning"
+msgstr "Avertissement d'accès"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid "Action"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_needaction
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_needaction
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_needaction
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_needaction
+msgid "Action Needed"
+msgstr "Action requise"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_ids
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_exception_decoration
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_exception_decoration
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_exception_decoration
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Décoration d'exception d'activité"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_state
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_state
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_state
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_state
+msgid "Activity State"
+msgstr "État de l'activité"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_type_icon
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_type_icon
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_type_icon
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icône du type d'activité"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "Add Document"
+msgstr "Ajouter un document"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Add Photo"
+msgstr "Ajouter une photo"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__agent_avatar
+msgid "Agent Avatar"
+msgstr "Avatar de l'agent"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__agent_name
+msgid "Agent Name"
+msgstr "Nom de l'agent"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__amount_total
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__amount
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__amount
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__amount
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__amount
+#: model_terms:ir.ui.view,arch_db:hill_solution.invoice_report_template
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+#, python-format
+msgid "Amount"
+msgstr "Montant"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__amount_total
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__amount_total
+msgid "Amount Total"
+msgstr "Montant total"
+
+#. module: hill_solution
+#: model:hill.case.stage,name:hill_solution.stage_appointment
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Appointment"
+msgstr "Rendez-vous"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__appointment_status__confirmed
+msgid "Appointment Confirmed"
+msgstr "Rendez-vous confirmé"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__appointment_status__scheduled
+msgid "Appointment Scheduled"
+msgstr "Rendez-vous planifié"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__appointment_status
+msgid "Appointment Status"
+msgstr "Statut du rendez-vous"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Approve"
+msgstr "Approuver"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:site.report.stage,name:hill_solution.stage_approved
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+#, python-format
+msgid "Approved"
+msgstr "Approuvé"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__area
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__area
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__area
+#, python-format
+msgid "Area"
+msgstr "Surface"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Assignment"
+msgstr "Affectation"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+msgid "Associated Documents"
+msgstr "Documents associés"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+msgid "Associated Photos"
+msgstr "Photos associées"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_attachment_count
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_attachment_count
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_attachment_count
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__payment_status__awaiting
+msgid "Awaiting Payment"
+msgstr "En attente de paiement"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__client_type__b2b
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__client_type__b2b
+#: model:ir.model.fields.selection,name:hill_solution.selection__res_partner__hill_client_type__b2b
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report__client_type__b2b
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_kanban
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_kanban
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_kanban
+msgid "B2B"
+msgstr "B2B"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+msgid "B2B Information"
+msgstr "Informations B2B"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__client_type__b2c
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__client_type__b2c
+#: model:ir.model.fields.selection,name:hill_solution.selection__res_partner__hill_client_type__b2c
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report__client_type__b2c
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_kanban
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_kanban
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_kanban
+msgid "B2C"
+msgstr "B2C"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+msgid "B2C Information"
+msgstr "Informations B2C"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_wizard_form
+msgid "Back"
+msgstr "Retour"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment__payment_method__bank
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment_register_wizard__payment_method__bank
+msgid "Bank Transfer"
+msgstr "Virement bancaire"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Beneficiary"
+msgstr "Bénéficiaire"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Beneficiary Details"
+msgstr "Détails du bénéficiaire"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__beneficiary_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__beneficiary_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_beneficiary_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_beneficiary_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__beneficiary_firstname
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Beneficiary First Name"
+msgstr "Prénom du bénéficiaire"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Beneficiary Information"
+msgstr "Informations du bénéficiaire"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__beneficiary_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__beneficiary_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_beneficiary_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_beneficiary_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__beneficiary_lastname
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Beneficiary Last Name"
+msgstr "Nom du bénéficiaire"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__beneficiary_status
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__beneficiary_status
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_beneficiary_status
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_beneficiary_status
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__beneficiary_status
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Beneficiary Status"
+msgstr "Statut du bénéficiaire"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Bill To"
+msgstr "Facturer à"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__breadth
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__breadth
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__breadth
+#, python-format
+msgid "Breadth"
+msgstr "Largeur"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Business (B2B)"
+msgstr "Entreprise (B2B)"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Business Details"
+msgstr "Détails de l'entreprise"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Business Information"
+msgstr "Informations de l'entreprise"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_photo_widget.js:0
+#, python-format
+msgid "Camera is not supported on this device."
+msgstr "La caméra n'est pas prise en charge sur cet appareil."
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__can_create_study
+msgid "Can Create Study"
+msgstr "Peut créer une étude"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_payment_register_wizard_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_invoice_generation_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: hill_solution
+#: model:hill.case.stage,name:hill_solution.stage_cancelled
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_photo_widget.js:0
+#, python-format
+msgid "Cannot access camera. Please check permissions."
+msgstr "Impossible d'accéder à la caméra. Veuillez vérifier les autorisations."
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Capture Preview"
+msgstr "Aperçu de la capture"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__case_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__case_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__case_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__case_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__case_id
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__case_id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__case_id
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_list
+msgid "Case"
+msgstr "Dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+msgid "Case Info"
+msgstr "Informations du dossier"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Case Information"
+msgstr "Informations du dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.invoice_report_template
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+msgid "Case No"
+msgstr "N° Dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_list
+msgid "Case No."
+msgstr "N° Dossier"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__case_number
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__case_number
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__case_number
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__case_number
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__case_number
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+#, python-format
+msgid "Case Number"
+msgstr "Numéro de dossier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Case Progress"
+msgstr "Progression du dossier"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__name
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+#, python-format
+msgid "Case Title"
+msgstr "Titre du dossier"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Case Validated."
+msgstr "Dossier validé."
+
+#. module: hill_solution
+#: model:ir.actions.act_window,name:hill_solution.action_hill_case
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__line_ids
+#: model:ir.ui.menu,name:hill_solution.menu_hill_case
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_tree
+msgid "Cases"
+msgstr "Dossiers"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment__payment_method__cash
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment_register_wizard__payment_method__cash
+msgid "Cash"
+msgstr "Espèces"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment__payment_method__check
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment_register_wizard__payment_method__check
+msgid "Check"
+msgstr "Chèque"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "Click to upload PDFs, Word, or Excel files"
+msgstr "Cliquez pour télécharger des fichiers PDF, Word ou Excel"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Click to upload or drag and drop images"
+msgstr "Cliquez pour télécharger ou glissez-déposez des images"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__partner_id
+#, python-format
+msgid "Client"
+msgstr ""
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Client Information"
+msgstr "Informations du client"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__client_type
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__client_type
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_client_type
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_client_type
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__client_type
+#, python-format
+msgid "Client Type"
+msgstr "Type de client"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__appointment_status__npj
+msgid "Client Unreachable (NPJ)"
+msgstr "Client injoignable (NPJ)"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_wizard_form
+#, python-format
+msgid "Close"
+msgstr "Fermer"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Company"
+msgstr "Société"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__company_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__company_name
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_company_name
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_company_name
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__company_name
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Company Name"
+msgstr "Nom de la société"
+
+#. module: hill_solution
+#: model:hill.study.stage,name:hill_solution.stage_completed
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_status__completed
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_status__completed
+msgid "Completed"
+msgstr "Terminé"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_payment_register_wizard_form
+msgid "Confirm Payment"
+msgstr "Confirmer le paiement"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__contact_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__contact_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_contact_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_contact_firstname
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__contact_firstname
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Contact First Name"
+msgstr "Prénom du contact"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__contact_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__contact_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_contact_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_contact_lastname
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__contact_lastname
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Contact Last Name"
+msgstr "Nom du contact"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Create Invoice"
+msgstr "Créer une facture"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Create Study"
+msgstr "Créer une étude"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Create Visit"
+msgstr "Créer une visite"
+
+#. module: hill_solution
+#: model_terms:ir.actions.act_window,help:hill_solution.action_hill_case
+msgid "Create your first Case!"
+msgstr "Créez votre premier dossier !"
+
+#. module: hill_solution
+#: model_terms:ir.actions.act_window,help:hill_solution.action_hill_study
+msgid "Create your first Study!"
+msgstr "Créez votre première étude !"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__create_uid
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__create_date
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment__payment_method__card
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_payment_register_wizard__payment_method__card
+msgid "Credit Card"
+msgstr "Carte de crédit"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__currency_id
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__access_url
+msgid "Customer Portal URL"
+msgstr "URL du portail client"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__date_deadline
+msgid "Deadline"
+msgstr "Échéance"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Description"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_nature__destratification
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_nature__destratification
+msgid "Destratification Fans Sizing"
+msgstr "Dimensionnement de ventilateurs de déstratification"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__document_ids_direct
+msgid "Direct Documents"
+msgstr "Documents directs"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__display_name
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_site_document.py:0
+#, python-format
+msgid "Document"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__document_ids
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__document_ids
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Documents"
+msgstr ""
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Documents <span class=\"text-muted\">(Optional)</span>"
+msgstr "Documents <span class=\"text-muted\">(Optionnel)</span>"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#: model:hill.case.stage,name:hill_solution.stage_done
+#, python-format
+msgid "Done"
+msgstr "Terminé"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "Download"
+msgstr "Télécharger"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_invoice_form
+msgid "Download PDF"
+msgstr "Télécharger le PDF"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "Download to view"
+msgstr "Télécharger pour afficher"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_invoice__state__draft
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__visit_duration
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__visit_duration
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__visit_duration
+msgid "Duration (hours)"
+msgstr "Durée (heures)"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+msgid "Enter study input data (for studies without visit)"
+msgstr "Saisir les données d'entrée de l'étude (pour les études sans visite)"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__attachment_id
+msgid "File"
+msgstr "Fichier"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__file_size
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__file_size
+msgid "File Size"
+msgstr "Taille du fichier"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Financial"
+msgstr "Financier"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__fold
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__fold
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__fold
+msgid "Folded in Kanban"
+msgstr "Replié dans Kanban"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_follower_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_follower_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_follower_ids
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_partner_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_partner_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_partner_ids
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (Partenaires)"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__activity_type_icon
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__activity_type_icon
+#: model:ir.model.fields,help:hill_solution.field_hill_study__activity_type_icon
+#: model:ir.model.fields,help:hill_solution.field_site_report__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icône Font Awesome ex. fa-tasks"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report_wizard__state__form
+msgid "Form"
+msgstr "Formulaire"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/res_partner.py:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_invoice_generation_wizard_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_partner_invoice_tree
+#, python-format
+msgid "Generate Invoice"
+msgstr "Générer la facture"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_invoice_generation_wizard
+msgid "Generate Invoice Wizard"
+msgstr "Assistant de génération de facture"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+msgid "Generate Visit Report"
+msgstr "Générer le rapport de visite"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_invoice__state__generated
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid "Generated"
+msgstr "Généré"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__attachment_id
+msgid "Generated Report"
+msgstr "Rapport généré"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__has_message
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__has_message
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__has_message
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__has_message
+msgid "Has Message"
+msgstr "A un message"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__has_pending_approval
+msgid "Has Pending Approval"
+msgstr "A une approbation en attente"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+msgid "Has Visit Date"
+msgstr "A une date de visite"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__height
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__height
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__height
+#, python-format
+msgid "Height"
+msgstr "Hauteur"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__beneficiary_status__high_vulnerability
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__beneficiary_status__high_vulnerability
+#: model:ir.model.fields.selection,name:hill_solution.selection__res_partner__hill_beneficiary_status__high_vulnerability
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report__beneficiary_status__high_vulnerability
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "High-Vulnerability (Extreme Hardship)"
+msgstr "Grande vulnérabilité (précarité extrême)"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_case_stage
+msgid "Hill Case Stage"
+msgstr "Étape de dossier Hill"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_invoice
+msgid "Hill Invoice"
+msgstr "Facture Hill"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_invoice_line
+msgid "Hill Invoice Line"
+msgstr "Ligne de facture Hill"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_payment
+msgid "Hill Payment"
+msgstr "Paiement Hill"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_payment_register_wizard
+msgid "Hill Payment Register Wizard"
+msgstr "Assistant d'enregistrement de paiement Hill"
+
+#. module: hill_solution
+#: model:ir.ui.menu,name:hill_solution.menu_hill_solution_root
+msgid "Hill Solution"
+msgstr ""
+
+#. module: hill_solution
+#: model:res.groups,name:hill_solution.hill_case_agent
+msgid "Hill Solution / Agent"
+msgstr "Hill Solution / Agente"
+
+#. module: hill_solution
+#: model:res.groups,name:hill_solution.hill_case_manager
+msgid "Hill Solution / Manager"
+msgstr "Hill Solution / Responsable"
+
+#. module: hill_solution
+#: model:res.groups,name:hill_solution.hill_case_technician
+msgid "Hill Solution / Technician"
+msgstr "Hill Solution / Technicien"
+
+#. module: hill_solution
+#: model:res.groups,name:hill_solution.hill_case_group
+msgid "Hill Solution / User"
+msgstr "Hill Solution / Utilisateur"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_case
+msgid "Hill Solution Cases"
+msgstr "Dossiers Hill Solution"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_study
+msgid "Hill Study"
+msgstr "Étude Hill"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_study_stage
+msgid "Hill Study Stage"
+msgstr "Étape d'étude Hill"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "I am a"
+msgstr "Je suis un(e)"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__id
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__id
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "INVOICE"
+msgstr "FACTURE"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_exception_icon
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_exception_icon
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_exception_icon
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_exception_icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__activity_exception_icon
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__activity_exception_icon
+#: model:ir.model.fields,help:hill_solution.field_hill_study__activity_exception_icon
+#: model:ir.model.fields,help:hill_solution.field_site_report__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité d'exception."
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__message_needaction
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__message_needaction
+#: model:ir.model.fields,help:hill_solution.field_hill_study__message_needaction
+#: model:ir.model.fields,help:hill_solution.field_site_report__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, les nouveaux messages nécessitent votre attention."
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__message_has_error
+#: model:ir.model.fields,help:hill_solution.field_hill_case__message_has_sms_error
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__message_has_error
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__message_has_sms_error
+#: model:ir.model.fields,help:hill_solution.field_hill_study__message_has_error
+#: model:ir.model.fields,help:hill_solution.field_hill_study__message_has_sms_error
+#: model:ir.model.fields,help:hill_solution.field_site_report__message_has_error
+#: model:ir.model.fields,help:hill_solution.field_site_report__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si coché, certains messages ont une erreur de livraison."
+
+#. module: hill_solution
+#: model:hill.study.stage,name:hill_solution.stage_in_progress
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_status__in_progress
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_status__in_progress
+msgid "In Progress"
+msgstr "En cours"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Individual (B2C)"
+msgstr "Particulier (B2C)"
+
+#. module: hill_solution
+#: model:ir.actions.report,name:hill_solution.action_invoice_report
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__invoice_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__invoice_id
+#: model_terms:ir.ui.view,arch_db:hill_solution.invoice_report_template
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_invoice_form
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__invoice_date
+#, python-format
+msgid "Invoice Date"
+msgstr "Date de facture"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_invoice_generation_wizard_line
+msgid "Invoice Generation Wizard Line"
+msgstr "Ligne d'assistant de génération de facture"
+
+#. module: hill_solution
+#: model:ir.ui.menu,name:hill_solution.menu_hill_invoice_history
+msgid "Invoice History"
+msgstr "Historique des factures"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Invoice Information"
+msgstr "Informations de la facture"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__invoice_line_ids
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_invoice_form
+#, python-format
+msgid "Invoice Lines"
+msgstr "Lignes de facture"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid "Invoice No"
+msgstr "N° Facture"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__name
+#, python-format
+msgid "Invoice Number"
+msgstr "Numéro de facture"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__invoice_attachment_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__attachment_id
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Invoice PDF"
+msgstr "PDF de la facture"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__invoice_status
+msgid "Invoice Status"
+msgstr "Statut de la facture"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Invoice created successfully."
+msgstr "Facture créée avec succès."
+
+#. module: hill_solution
+#: model:hill.case.stage,name:hill_solution.stage_invoice_payment
+msgid "Invoice/Payment"
+msgstr "Facture/Paiement"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__invoice_status__invoiced
+msgid "Invoiced"
+msgstr "Facturé"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/res_partner.py:0
+#: model:ir.actions.act_window,name:hill_solution.action_hill_invoice
+#: model:ir.actions.server,name:hill_solution.action_partner_invoice_server
+#: model:ir.ui.menu,name:hill_solution.menu_invoice_queue
+#, python-format
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__is_appointment
+msgid "Is Appointment"
+msgstr "Est un rendez-vous"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_is_follower
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_is_follower
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_is_follower
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_is_follower
+msgid "Is Follower"
+msgstr "Est abonné"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__is_in_progress
+msgid "Is In Progress"
+msgstr "Est en cours"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__is_invoice_payment
+msgid "Is Invoice Payment"
+msgstr "Est un paiement de facture"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__is_new_case
+msgid "Is New Case"
+msgstr "Est un nouveau dossier"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__is_requested
+msgid "Is Requested"
+msgstr "Est demandé"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__is_study
+msgid "Is Study"
+msgstr "Est une étude"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__is_to_process
+msgid "Is To Process"
+msgstr "Est à traiter"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__is_to_visit
+msgid "Is To Visit"
+msgstr "Est à visiter"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__is_visit
+msgid "Is Visit"
+msgstr "Est une visite"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "JPG, PNG, GIF, WebP"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_nature__led
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_nature__led
+msgid "LED Lighting Sizing"
+msgstr "Dimensionnement de l'éclairage LED"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__write_uid
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__write_date
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__length
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__length
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__length
+#, python-format
+msgid "Length"
+msgstr "Longueur"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__line_ids
+msgid "Line"
+msgstr "Ligne"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "Loading documents..."
+msgstr "Chargement des documents..."
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Loading photos..."
+msgstr "Chargement des photos..."
+
+#. module: hill_solution
+#: model:ir.actions.act_window,name:hill_solution.action_site_report_master_calendar
+#: model:ir.ui.menu,name:hill_solution.menu_master_calendar
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_master_calendar
+msgid "Master Calendar"
+msgstr "Calendrier principal"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_has_error
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_has_error
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_has_error
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur de livraison de message"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_ids
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Method"
+msgstr "Mode"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__mimetype
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__mimetype
+msgid "Mime Type"
+msgstr "Type MIME"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mon échéance d'activité"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_home_hill_case
+msgid "My Cases"
+msgstr "Mes dossiers"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_home_hill_case
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid "My Invoices"
+msgstr "Mes factures"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_calendar
+msgid "My Visits"
+msgstr "Mes visites"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__name
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__name
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__name
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Name"
+msgstr "Nom"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_invoice.py:0
+#: code:addons/hill_solution/models/hill_invoice.py:0
+#: code:addons/hill_solution/models/hill_invoice.py:0
+#: code:addons/hill_solution/models/hill_invoice.py:0
+#, python-format
+msgid "New"
+msgstr "Nouveau"
+
+#. module: hill_solution
+#: model:hill.case.stage,name:hill_solution.stage_new
+msgid "New Case"
+msgstr "Nouveau dossier"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_date_deadline
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_date_deadline
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_date_deadline
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Prochaine échéance d'activité"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_summary
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_summary
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_summary
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé de la prochaine activité"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_type_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_type_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_type_id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type de la prochaine activité"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+msgid "No Visit Date"
+msgstr "Pas de date de visite"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "No approved visit found."
+msgstr "Aucune visite approuvée trouvée."
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "No documents have been uploaded."
+msgstr "Aucun document n'a été téléchargé."
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "No documents yet"
+msgstr "Pas encore de documents"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "No photos have been uploaded."
+msgstr "Aucune photo n'a été téléchargée."
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "No photos yet"
+msgstr "Pas encore de photos"
+
+#. module: hill_solution
+#: model_terms:ir.actions.act_window,help:hill_solution.action_site_report
+msgid "No site visits yet"
+msgstr "Pas encore de visites de site"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "No study found for this dossier."
+msgstr "Aucune étude trouvée pour ce dossier."
+
+#. module: hill_solution
+#: model_terms:ir.actions.act_window,help:hill_solution.action_site_report_workload
+msgid "No visits found"
+msgstr "Aucune visite trouvée"
+
+#. module: hill_solution
+#: model_terms:ir.actions.act_window,help:hill_solution.action_site_report_master_calendar
+msgid "No visits scheduled yet"
+msgstr "Pas encore de visites planifiées"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__invoice_status__not_invoiced
+msgid "Not Invoiced"
+msgstr "Non facturé"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__notes
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__notes
+msgid "Notes"
+msgstr "Remarques"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_needaction_counter
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_needaction_counter
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_needaction_counter
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_has_error_counter
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_has_error_counter
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_has_error_counter
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__message_needaction_counter
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__message_needaction_counter
+#: model:ir.model.fields,help:hill_solution.field_hill_study__message_needaction_counter
+#: model:ir.model.fields,help:hill_solution.field_site_report__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__message_has_error_counter
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__message_has_error_counter
+#: model:ir.model.fields,help:hill_solution.field_hill_study__message_has_error_counter
+#: model:ir.model.fields,help:hill_solution.field_site_report__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__prestation_type__ontd
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Obligation Not to Do"
+msgstr "Obligation de ne pas faire"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__prestation_type__otd
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Obligation to Do"
+msgstr "Obligation de faire"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__prestation_type__otg
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Obligation to Give"
+msgstr "Obligation de donner"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_document_widget.js:0
+#, python-format
+msgid "Only PDF, Word, and Excel files are allowed."
+msgstr "Seuls les fichiers PDF, Word et Excel sont autorisés."
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__invoice_case_count
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__invoice_case_count
+msgid "Open Cases"
+msgstr "Dossiers ouverts"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_wizard_form
+msgid "Open Preview"
+msgstr "Ouvrir l'aperçu"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_nature__other
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_nature__other
+msgid "Other"
+msgstr "Autre"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "PDF Preview"
+msgstr "Aperçu PDF"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__payment_status__paid
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_invoice__state__paid
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid "Paid"
+msgstr "Payé"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__invoice_status__partially_invoiced
+msgid "Partially Invoiced"
+msgstr "Partiellement facturé"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__payment_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__payment_date
+msgid "Payment Date"
+msgstr "Date de paiement"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__payment_method
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__payment_method
+msgid "Payment Method"
+msgstr "Mode de paiement"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__payment_status
+msgid "Payment Status"
+msgstr "Statut du paiement"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_payment_register_wizard.py:0
+#, python-format
+msgid "Payment registered successfully."
+msgstr "Paiement enregistré avec succès."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__payment_ids
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#, python-format
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_status__pending
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_status__pending
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+msgid "Pending"
+msgstr "En attente"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__b2b_phone
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__beneficiary_phone
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__b2b_phone
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__beneficiary_phone
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_b2b_phone
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_beneficiary_phone
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_b2b_phone
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_beneficiary_phone
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__b2b_phone
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__beneficiary_phone
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__attachment_id
+msgid "Photo"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__photo_ids
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__photo_ids
+msgid "Photos"
+msgstr ""
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Please open the preview first."
+msgstr "Veuillez d'abord ouvrir l'aperçu."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Please register a payment first before creating the invoice."
+msgstr "Veuillez d'abord enregistrer un paiement avant de créer la facture."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Please select a Technician before creating the site visit."
+msgstr "Veuillez sélectionner un technicien avant de créer la visite de site."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Please select a client type."
+msgstr "Veuillez sélectionner un type de client."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Please set an amount on the case before creating an invoice."
+msgstr ""
+"Veuillez définir un montant sur le dossier avant de créer une "
+"facture.Veuillez définir un montant sur le dossier avant de créer une "
+"facture."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report.py:0
+#, python-format
+msgid "Please upload at least one document before submitting."
+msgstr "Veuillez télécharger au moins un document avant de soumettre."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report.py:0
+#, python-format
+msgid "Please upload at least one photo before submitting."
+msgstr "Veuillez télécharger au moins une photo avant de soumettre."
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__access_url
+msgid "Portal Access URL"
+msgstr "URL d'accès au portail"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__pressure
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__pressure
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__pressure
+#, python-format
+msgid "Pressure"
+msgstr "Pression"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__prestation_type
+msgid "Prestation Type"
+msgstr "Type de prestation"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Prestation Type <span class=\"text-danger\">*</span>"
+msgstr "Type de prestation <span class=\"text-danger\">*</span>"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__preview_html
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report_wizard__state__preview
+#, python-format
+msgid "Preview"
+msgstr "Aperçu"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__preview_url
+msgid "Preview URL"
+msgstr "URL de l'aperçu"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "Preview not available for this file type."
+msgstr "Aperçu non disponible pour ce type de fichier."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Price"
+msgstr "Prix"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Qty"
+msgstr "Qté"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment__reference
+#: model:ir.model.fields,field_description:hill_solution.field_hill_payment_register_wizard__reference
+#, python-format
+msgid "Reference"
+msgstr "Référence"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.actions.act_window,name:hill_solution.action_hill_payment_register
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_payment_register_wizard_form
+#, python-format
+msgid "Register Payment"
+msgstr "Enregistrer le paiement"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Reject"
+msgstr "Rejeter"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:site.report.stage,name:hill_solution.stage_rejected
+#, python-format
+msgid "Rejected"
+msgstr "Rejeté"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#, python-format
+msgid "Remove"
+msgstr "Supprimer"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report.py:0
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Report saved to documents."
+msgstr "Rapport enregistré dans les documents."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report.py:0
+#, python-format
+msgid "Request Submitted successfully."
+msgstr "Demande soumise avec succès."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+msgid "Request for Approval"
+msgstr "Demande d'approbation"
+
+#. module: hill_solution
+#: model:site.report.stage,name:hill_solution.stage_requested
+msgid "Requested For Approval"
+msgstr "Demandé pour approbation"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_status__requires_modification
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_status__requires_modification
+msgid "Requires Modification"
+msgstr "Nécessite une modification"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__residential_address
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__residential_address
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__residential_address
+msgid "Residential Address"
+msgstr "Adresse de résidence"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Residential Address <span class=\"text-danger\">*</span>"
+msgstr "Adresse de résidence <span class=\"text-danger\">*</span>"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__activity_user_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__activity_user_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__activity_user_id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__activity_user_id
+msgid "Responsible User"
+msgstr "Utilisateur responsable"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Retake"
+msgstr "Reprendre"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__siret
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__siret
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__hill_siret
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__hill_siret
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__siret
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "SIRET Number"
+msgstr "Numéro SIRET"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__message_has_sms_error
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__message_has_sms_error
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__message_has_sms_error
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur de livraison SMS"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_document_widget.js:0
+#, python-format
+msgid "Save the record first before uploading documents."
+msgstr "Enregistrez d'abord le document avant de télécharger des documents."
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_photo_widget.js:0
+#, python-format
+msgid "Save the record first before uploading photos."
+msgstr "Enregistrez d'abord le document avant de télécharger des photos."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_wizard_form
+msgid "Save to Documents"
+msgstr "Enregistrer dans les documents"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__access_token
+msgid "Security Token"
+msgstr "Jeton de sécurité"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__selected
+msgid "Selected"
+msgstr "Sélectionné"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case_stage__sequence
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study_stage__sequence
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_stage__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.invoice_report_template
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+#, python-format
+msgid "Service"
+msgstr ""
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Service Details"
+msgstr "Détails du service"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__service_type
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice_line__service_type
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__service_type
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__service_type
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#, python-format
+msgid "Service Type"
+msgstr "Type de service"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__site_address
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__site_address
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__site_address
+msgid "Site Address"
+msgstr "Adresse du site"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Site Address <span class=\"text-danger\">*</span>"
+msgstr "Adresse du site <span class=\"text-danger\">*</span>"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+#, python-format
+msgid "Site Data"
+msgstr "Données du site"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+msgid "Site Details"
+msgstr "Détails du site"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__site_report_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__site_report_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__site_report_id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__site_report_id
+msgid "Site Report"
+msgstr "Rapport de site"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__site_report_ids
+msgid "Site Reports"
+msgstr "Rapports de site"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:ir.model,name:hill_solution.model_site_report
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+#, python-format
+msgid "Site Visit"
+msgstr "Visite de site"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_site_document
+msgid "Site Visit Document"
+msgstr "Document de visite de site"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_hill_site_photo
+msgid "Site Visit Photo"
+msgstr "Photo de visite de site"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_site_report_stage
+msgid "Site Visit Stage"
+msgstr "Étape de visite de site"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_tree
+msgid "Site Visits"
+msgstr "Visites de site"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Site visit created successfully."
+msgstr "Visite de site créée avec succès."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Size"
+msgstr "Taille"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__stage_id
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__stage_id
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__stage_id
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+msgid "Stage"
+msgstr "Étape"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__stage_name
+msgid "Stage Name"
+msgstr "Nom de l'étape"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__beneficiary_status__standard
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__beneficiary_status__standard
+#: model:ir.model.fields.selection,name:hill_solution.selection__res_partner__hill_beneficiary_status__standard
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report__beneficiary_status__standard
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Standard"
+msgstr ""
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+msgid "Start Study"
+msgstr "Commencer l'étude"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__state
+#: model:ir.model.fields,field_description:hill_solution.field_site_report_wizard__state
+msgid "State"
+msgstr "État"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_list
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+msgid "Status"
+msgstr "Statut"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__activity_state
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__activity_state
+#: model:ir.model.fields,help:hill_solution.field_hill_study__activity_state
+#: model:ir.model.fields,help:hill_solution.field_site_report__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard: La date d'échéance est déjà dépassée\n"
+"Aujourd'hui: La date d'activité est aujourd'hui\n"
+"Planifié: Activités futures."
+
+#. module: hill_solution
+#: model:ir.actions.act_window,name:hill_solution.action_hill_study
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__study_ids
+#: model:ir.ui.menu,name:hill_solution.menu_hill_study
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_tree
+msgid "Studies"
+msgstr "Études"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model:hill.case.stage,name:hill_solution.stage_study
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__service_type__study
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_invoice_line__service_type__study
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report__service_type__study
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+#, python-format
+msgid "Study"
+msgstr "Étude"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+msgid "Study Complete"
+msgstr "Étude terminée"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_study.py:0
+#, python-format
+msgid "Study Completed."
+msgstr "Étude terminée."
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__study_data
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__study_data
+msgid "Study Input Data"
+msgstr "Données d'entrée de l'étude"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__study_nature
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__study_nature
+msgid "Study Nature"
+msgstr "Nature de l'étude"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__study_notes
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__study_notes
+msgid "Study Notes"
+msgstr "Notes de l'étude"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_study.py:0
+#, python-format
+msgid "Study Started."
+msgstr "Étude démarrée."
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__study_status
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__study_status
+msgid "Study Status"
+msgstr "Statut de l'étude"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__name
+msgid "Study Title"
+msgstr "Titre de l'étude"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Study created successfully."
+msgstr "Étude créée avec succès."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Study validated successfully."
+msgstr "Étude validée avec succès."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+msgid "Submit your first case."
+msgstr "Soumettez votre premier dossier."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "Submitted on"
+msgstr "Soumis le"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_case.py:0
+#: code:addons/hill_solution/models/hill_payment_register_wizard.py:0
+#: code:addons/hill_solution/models/hill_study.py:0
+#: code:addons/hill_solution/models/hill_study.py:0
+#: code:addons/hill_solution/models/site_report.py:0
+#: code:addons/hill_solution/models/site_report.py:0
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Success"
+msgstr "Succès"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Take Photo"
+msgstr "Prendre une photo"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+msgid "Technical Visit"
+msgstr "Visite technique"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__service_type__both
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_invoice_line__service_type__both
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report__service_type__both
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_form
+msgid "Technical Visit + Study"
+msgstr "Visite technique + Étude"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__technician_name
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+#, python-format
+msgid "Technician"
+msgstr "Technicien"
+
+#. module: hill_solution
+#: model:ir.ui.menu,name:hill_solution.menu_technician_availability
+msgid "Technician Availability"
+msgstr "Disponibilité du technicien"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__technician_avatar
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__technician_avatar
+msgid "Technician Avatar"
+msgstr "Avatar du technicien"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__technician_name
+msgid "Technician Name"
+msgstr "Nom du technicien"
+
+#. module: hill_solution
+#: model:ir.actions.act_window,name:hill_solution.action_site_report
+#: model:ir.ui.menu,name:hill_solution.menu_site_report
+msgid "Technician Visits"
+msgstr "Visites du technicien"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__temperature
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__temperature
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__temperature
+#, python-format
+msgid "Temperature"
+msgstr "Température"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+msgid "Title"
+msgstr "Titre"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__name
+msgid "Title of the case"
+msgstr "Titre du dossier"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__appointment_status__to_contact
+msgid "To Be Contacted"
+msgstr "À contacter"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__appointment_status__to_recontact
+msgid "To Be Re-contacted"
+msgstr "À recontacter"
+
+#. module: hill_solution
+#: model:hill.study.stage,name:hill_solution.stage_to_modify
+msgid "To Modify"
+msgstr "À modifier"
+
+#. module: hill_solution
+#: model:hill.study.stage,name:hill_solution.stage_to_process
+msgid "To Process"
+msgstr "À traiter"
+
+#. module: hill_solution
+#: model:site.report.stage,name:hill_solution.stage_tovisit
+msgid "To Visit"
+msgstr "À visiter"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_invoice_detail
+#, python-format
+msgid "Total"
+msgstr "Totale"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.invoice_report_template
+msgid "Total :"
+msgstr "Totale :"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_res_partner__invoice_total_amount
+#: model:ir.model.fields,field_description:hill_solution.field_res_users__invoice_total_amount
+msgid "Total Amount"
+msgstr "Montant total"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_list
+msgid "Type"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__activity_exception_decoration
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__activity_exception_decoration
+#: model:ir.model.fields,help:hill_solution.field_hill_study__activity_exception_decoration
+#: model:ir.model.fields,help:hill_solution.field_site_report__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type de l'activité d'exception enregistrée."
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__case_number
+#: model:ir.model.fields,help:hill_solution.field_site_report__case_number
+msgid "Unique case number generated automatically"
+msgstr "Numéro de dossier unique généré automatiquement"
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__payment_status__unpaid
+msgid "Unpaid"
+msgstr "Impayé"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_kanban
+msgid "Untitled Case"
+msgstr "Dossier sans titre"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/js/hill_document_widget.js:0
+#: code:addons/hill_solution/static/src/js/hill_photo_widget.js:0
+#, python-format
+msgid "Upload failed: %s"
+msgstr "Échec du téléchargement : %s"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Upload from Gallery"
+msgstr "Importer depuis la galerie"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_document__uploaded_at
+#: model:ir.model.fields,field_description:hill_solution.field_hill_site_photo__uploaded_at
+msgid "Uploaded At"
+msgstr "Téléchargé le"
+
+#. module: hill_solution
+#. odoo-javascript
+#: code:addons/hill_solution/static/src/xml/hill_document_widget.xml:0
+#: code:addons/hill_solution/static/src/xml/hill_photo_widget.xml:0
+#, python-format
+msgid "Uploading..."
+msgstr "Téléchargement..."
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__user_is_manager
+msgid "User Is Manager"
+msgstr "L'utilisateur est responsable"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "VALIDATED"
+msgstr "VALIDÉ"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+msgid "Validate"
+msgstr "Valider"
+
+#. module: hill_solution
+#: model:hill.study.stage,name:hill_solution.stage_validated
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__is_validated
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__study_status__validated
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__study_status__validated
+msgid "Validated"
+msgstr "Validé"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__validated_badge
+msgid "Validated Badge"
+msgstr "Badge validé"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Validation Error"
+msgstr "Erreur de validation"
+
+#. module: hill_solution
+#: model:hill.case.stage,name:hill_solution.stage_visit
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_list
+msgid "Visit"
+msgstr "Visite"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+msgid "Visit Assignment"
+msgstr "Affectation de visite"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__visit_date
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__visit_date
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__visit_date
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_list
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+#, python-format
+msgid "Visit Date"
+msgstr "Date de visite"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_study_form
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_form
+#, python-format
+msgid "Visit Notes"
+msgstr "Notes de visite"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__visit_notes
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__visit_notes
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__visit_notes
+msgid "Visit Notes / Report"
+msgstr "Notes de visite / Rapport"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#, python-format
+msgid "Visit Report"
+msgstr "Rapport de visite"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report.py:0
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_wizard_form
+#, python-format
+msgid "Visit Report Preview"
+msgstr "Aperçu du rapport de visite"
+
+#. module: hill_solution
+#: model:ir.model,name:hill_solution.model_site_report_wizard
+msgid "Visit Report Preview Wizard"
+msgstr "Assistant d'aperçu du rapport de visite"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__is_visit_required
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__is_visit_required
+msgid "Visit Required"
+msgstr "Visite requise"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__site_report_stage
+msgid "Visit Stage"
+msgstr "Étape de visite"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__name
+msgid "Visit Title"
+msgstr "Titre de la visite"
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Visit details approved successfully."
+msgstr "Détails de la visite approuvés avec succès."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/hill_case.py:0
+#, python-format
+msgid "Visit details rejected."
+msgstr "Détails de la visite rejetés."
+
+#. module: hill_solution
+#: model_terms:ir.actions.act_window,help:hill_solution.action_site_report_master_calendar
+msgid ""
+"Visits appear here once technicians are assigned\n"
+"                and visit dates are set."
+msgstr ""
+"Les visites apparaissent ici une fois les techniciens affectés\n"
+"                et les dates de visite définies."
+
+#. module: hill_solution
+#. odoo-python
+#: code:addons/hill_solution/models/site_report_wizard.py:0
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__volume
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__volume
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__volume
+#, python-format
+msgid "Volume"
+msgstr ""
+
+#. module: hill_solution
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_case__beneficiary_status__vulnerable
+#: model:ir.model.fields.selection,name:hill_solution.selection__hill_study__beneficiary_status__vulnerable
+#: model:ir.model.fields.selection,name:hill_solution.selection__res_partner__hill_beneficiary_status__vulnerable
+#: model:ir.model.fields.selection,name:hill_solution.selection__site_report__beneficiary_status__vulnerable
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_details_fields_hill
+msgid "Vulnerable (Hardship)"
+msgstr "Vulnérable (précarité)"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_hill_case__website_message_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_invoice__website_message_ids
+#: model:ir.model.fields,field_description:hill_solution.field_hill_study__website_message_ids
+#: model:ir.model.fields,field_description:hill_solution.field_site_report__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: hill_solution
+#: model:ir.model.fields,help:hill_solution.field_hill_case__website_message_ids
+#: model:ir.model.fields,help:hill_solution.field_hill_invoice__website_message_ids
+#: model:ir.model.fields,help:hill_solution.field_hill_study__website_message_ids
+#: model:ir.model.fields,help:hill_solution.field_site_report__website_message_ids
+msgid "Website communication history"
+msgstr "Historique des communications du site web"
+
+#. module: hill_solution
+#: model:ir.model.fields,field_description:hill_solution.field_invoice_generation_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "Assistant"
+
+#. module: hill_solution
+#: model:ir.actions.act_window,name:hill_solution.action_site_report_workload
+#: model:ir.ui.menu,name:hill_solution.menu_workload_summary
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_list
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_site_report_workload_search
+msgid "Workload Summary"
+msgstr "Résumé de la charge de travail"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_cases
+msgid "You have no cases yet."
+msgstr "Vous n'avez pas encore de dossiers."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_invoices
+msgid "You have no invoices yet."
+msgstr "Vous n'avez pas encore de factures."
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_case_detail
+msgid "bytes"
+msgstr "octets"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_home_hill_case
+msgid "case_count"
+msgstr "nombre_de_cas""
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.portal_my_home_hill_case
+msgid "invoice_count"
+msgstr "nombre_de_factures"
+
+#. module: hill_solution
+#: model_terms:ir.ui.view,arch_db:hill_solution.view_hill_case_kanban
+msgid "validated"
+msgstr "validé"

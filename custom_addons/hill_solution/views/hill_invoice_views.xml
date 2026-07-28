@@ -1,0 +1,83 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_hill_invoice_tree" model="ir.ui.view">
+        <field name="name">hill.invoice.tree</field>
+        <field name="model">hill.invoice</field>
+
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="invoice_date"/>
+                <field name="amount_total"/>
+                <field name="state" widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_hill_invoice_form" model="ir.ui.view">
+        <field name="name">hill.invoice.form</field>
+        <field name="model">hill.invoice</field>
+
+        <field name="arch" type="xml">
+            <form string="Invoice">
+                <header>
+                    <field name="state" widget="statusbar"/>
+
+                    <button
+                        name="action_preview_invoice"
+                        type="object"
+                        string="Download PDF"
+                        class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="invoice_date" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="amount_total" readonly="1"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="attachment_id"
+                                readonly="1"
+                                options="{'no_create': True}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Invoice Lines">
+                            <field name="invoice_line_ids"
+                                readonly="1"
+                                nolabel="1">
+                                <tree>
+                                    <field name="case_number"/>
+                                    <field name="service_type"/>
+                                    <field name="amount"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hill_invoice" model="ir.actions.act_window">
+        <field name="name">Invoices</field>
+        <field name="res_model">hill.invoice</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

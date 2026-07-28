@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="hill_solution.HillPhotoWidget">
+    <div class="o_doc_preview_widget" t-ref="clickOutside"
+         t-on-dragover="onDragOver"
+         t-on-dragleave="onDragLeave"
+         t-on-drop="onDrop">
+
+        <!-- Gallery input -->
+        <input
+            type="file"
+            t-ref="photoFileInput"
+            class="o_doc_file_input"
+            multiple="multiple"
+            accept="image/*"
+            t-on-change="onFileChange"
+            style="display:none;"
+        />
+
+
+        <t t-if="state.loading">
+            <div class="o_doc_loading">
+                <i class="fa fa-spinner fa-spin me-2"/>Loading photos...
+            </div>
+        </t>
+
+        <t t-elif="!state.photos.length">
+            <div class="o_doc_empty_state"
+                 t-att-class="state.dragOver ? 'mv_dropzone_active' : ''"
+                 t-on-click="onClickUpload">
+                <i class="fa fa-cloud-upload o_doc_empty_icon"/>
+                <p class="o_doc_empty_title">No photos yet</p>
+                <t t-if="!props.readonly">
+                    <p class="o_doc_empty_sub">Click to upload or drag and drop images</p>
+                    <p class="o_doc_empty_sub" style="font-size:11px;color:#b0bac9;">
+                        JPG, PNG, GIF, WebP
+                    </p>
+                </t>
+                <t t-else="">
+                    <p class="o_doc_empty_sub">No photos have been uploaded.</p>
+                </t>
+            </div>
+        </t>
+
+        <t t-else="">
+            <div class="mv_photo_grid">
+                <t t-if="!props.readonly">
+                    <div class="o_doc_card o_doc_add_card"
+                         t-on-click.stop="onClickUpload">
+                        <t t-if="state.uploading">
+                            <i class="fa fa-spinner fa-spin o_doc_add_icon"/>
+                            <span class="o_doc_add_label">Uploading...</span>
+                        </t>
+                        <t t-else="">
+                            <i class="fa fa-plus o_doc_add_icon"/>
+                            <span class="o_doc_add_label">Add Photo</span>
+                        </t>
+                    </div>
+                </t>
+
+                <t t-foreach="state.photos" t-as="photo" t-key="photo.id">
+                    <div class="mv_photo_card"
+                         t-on-click="() => this.openLightbox(photo)">
+                        <div class="mv_photo_thumb_wrap">
+                            <img t-att-src="photo.url"
+                                 t-att-alt="photo.name"
+                                 class="mv_photo_thumb"
+                                 loading="lazy"/>
+                            <div class="mv_photo_overlay">
+                                <i class="fa fa-expand mv_zoom_icon"/>
+                            </div>
+                        </div>
+                        <div class="mv_photo_meta">
+                            <span class="mv_photo_name"
+                                  t-att-title="photo.name"
+                                  t-esc="photo.name"/>
+                            <span t-if="photo.size"
+                                  class="mv_photo_size"
+                                  t-esc="fmtSize(photo.size)"/>
+                        </div>
+                        <button t-if="!props.readonly"
+                                class="mv_photo_remove"
+                                t-on-click="(ev) => this.removePhoto(ev, photo.id)">
+                            <i class="fa fa-times"/>
+                        </button>
+                    </div>
+                </t>
+            </div>
+        </t>
+
+
+        <!-- Webcam Modal -->
+        <t t-if="state.showWebcam">
+            <div class="mv_webcam_modal" t-on-click="closeWebcamModal">
+                <div class="mv_webcam_modal_inner" t-on-click.stop="">
+                    <button class="mv_webcam_close" t-on-click="closeWebcamModal">
+                        <i class="fa fa-times"/>
+                    </button>
+                    <video class="mv_webcam_video" autoplay="true" playsinline="true" muted="true"/>
+                    <div class="mv_webcam_controls">
+                        <button class="mv_webcam_capture" t-on-click="captureFromWebcam">
+                            <i class="fa fa-camera"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </t>
+
+        <!-- Upload options modal (centered) -->
+        <t t-if="state.showUploadOptions">
+            <div class="mv_upload_modal" t-on-click="() => this.state.showUploadOptions = false">
+                <div class="mv_upload_modal_inner" t-on-click.stop="">
+                    <div class="mv_upload_option" t-on-click.stop="onClickGallery">
+                        <i class="fa fa-image me-2"/>
+                        Upload from Gallery
+                    </div>
+                    <div class="mv_upload_option" t-on-click.stop="onClickCamera">
+                        <i class="fa fa-camera me-2"/>
+                        Take Photo
+                    </div>
+                </div>
+            </div>
+        </t>
+
+        <!-- Capture Preview Modal -->
+        <t t-if="state.pendingCapture">
+            <div class="mv_capture_preview_modal" t-on-click="retakeCapture">
+                <div class="mv_capture_preview_inner" t-on-click.stop="">
+                    <div class="mv_capture_preview_header">
+                        <span class="mv_capture_preview_title">Capture Preview</span>
+                    </div>
+                    <div class="mv_capture_preview_body">
+                        <img t-att-src="state.pendingCapture.dataUrl"
+                             class="mv_capture_preview_img"/>
+                    </div>
+                    <div class="mv_capture_preview_footer">
+                        <button class="mv_capture_preview_btn mv_capture_preview_retake"
+                                t-on-click="retakeCapture">
+                            <i class="fa fa-times"/>
+                            Retake
+                        </button>
+                        <button class="mv_capture_preview_btn mv_capture_preview_confirm"
+                                t-on-click="confirmCapture">
+                            <i class="fa fa-check"/>
+                            Done
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </t>
+
+        <!-- Lightbox -->
+        <t t-if="state.lightbox and state.selectedPhoto">
+            <div class="mv_lightbox" t-on-click="closeLightbox">
+                <div class="mv_lightbox_inner" t-on-click.stop="">
+
+                    <button class="mv_lightbox_close" t-on-click="closeLightbox">
+                        <i class="fa fa-times"/>
+                    </button>
+
+                    <t t-if="state.photos.length > 1">
+                        <button class="mv_lightbox_prev"
+                                t-on-click="() => this.navigate(-1)">
+                            <i class="fa fa-chevron-left"/>
+                        </button>
+                        <button class="mv_lightbox_next"
+                                t-on-click="() => this.navigate(1)">
+                            <i class="fa fa-chevron-right"/>
+                        </button>
+                    </t>
+
+                    <img t-att-src="state.selectedPhoto.url"
+                         t-att-alt="state.selectedPhoto.name"
+                         class="mv_lightbox_img"/>
+
+                    <div class="mv_lightbox_caption">
+                        <span t-esc="state.selectedPhoto.name"/>
+                        <span t-if="state.selectedPhoto.uploadedAt"
+                              class="ms-2 text-muted"
+                              t-esc="state.selectedPhoto.uploadedAt"/>
+                    </div>
+
+                </div>
+            </div>
+        </t>
+
+    </div>
+</t>
+
+</templates>

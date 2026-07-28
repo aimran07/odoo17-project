@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="hill_solution.HillDocumentWidget">
+    <div class="o_doc_preview_widget">
+
+        <input
+            type="file"
+            t-ref="docFileInput"
+            class="o_doc_file_input"
+            multiple="multiple"
+            accept=".pdf,.doc,.docx,.xls,.xlsx"
+            t-on-change="onFileUpload"
+            style="display:none;"
+        />
+
+        <t t-if="state.loading">
+            <div class="o_doc_loading">
+                <i class="fa fa-spinner fa-spin me-2"/>Loading documents...
+            </div>
+        </t>
+
+        <t t-elif="!state.documents.length and !props.readonly">
+            <div class="o_doc_empty_state" t-on-click="triggerUpload">
+                <i class="fa fa-cloud-upload o_doc_empty_icon"/>
+                <p class="o_doc_empty_title">No documents yet</p>
+                <p class="o_doc_empty_sub">Click to upload PDFs, Word, or Excel files</p>
+            </div>
+        </t>
+
+        <t t-elif="!state.documents.length">
+            <div class="o_doc_empty_state o_doc_empty_readonly">
+                <i class="fa fa-cloud-upload o_doc_empty_icon"/>
+                <p class="o_doc_empty_title">No documents yet</p>
+                <p class="o_doc_empty_sub">No documents have been uploaded.</p>
+            </div>
+        </t>
+
+        <t t-else="">
+            <div class="o_doc_cards_grid">
+                <t t-if="!props.readonly">
+                    <div class="o_doc_card o_doc_add_card" t-on-click="triggerUpload">
+                        <t t-if="state.uploading">
+                            <i class="fa fa-spinner fa-spin o_doc_add_icon"/>
+                            <span class="o_doc_add_label">Uploading...</span>
+                        </t>
+                        <t t-else="">
+                            <i class="fa fa-plus o_doc_add_icon"/>
+                            <span class="o_doc_add_label">Add Document</span>
+                        </t>
+                    </div>
+                </t>
+
+                <t t-foreach="state.documents" t-as="doc" t-key="doc.id">
+                    <div class="o_doc_card" t-on-click="() => this.openPreview(doc)">
+
+                        <div class="o_doc_card_thumb">
+                            <div class="o_doc_card_icon_wrap">
+                                <i t-attf-class="fa fa-2x #{doc.icon}"/>
+                            </div>
+                            <span class="o_doc_type_badge" t-esc="doc.typeLabel"/>
+                        </div>
+
+                        <div class="o_doc_card_body">
+                            <span class="o_doc_card_name"
+                                  t-att-title="doc.name"
+                                  t-esc="doc.name"/>
+                            <span class="o_doc_card_size" t-esc="doc.sizeLabel"/>
+                            <!-- <span class="o_doc_card_date text-muted"
+                                  t-if="doc.uploadedAt"
+                                  t-esc="doc.uploadedAt"/> -->
+                        </div>
+
+                        <div class="o_doc_card_footer">
+                            <button
+                                class="o_doc_btn o_doc_btn_download"
+                                title="Download"
+                                t-on-click="(ev) => this.downloadDoc(ev, doc)">
+                                <i class="fa fa-download"/>
+                            </button>
+                            <button
+                                class="o_doc_btn o_doc_btn_preview"
+                                title="Preview">
+                                <i class="fa fa-eye"/>
+                            </button>
+                            <t t-if="!props.readonly">
+                                <button
+                                    class="o_doc_btn o_doc_btn_remove"
+                                    title="Remove"
+                                    t-on-click="(ev) => this.removeDoc(ev, doc)">
+                                    <i class="fa fa-trash"/>
+                                </button>
+                            </t>
+                        </div>
+
+                    </div>
+                </t>
+            </div>
+        </t>
+
+        <t t-if="state.showModal and state.previewDoc">
+            <div class="o_doc_modal_overlay" t-on-click="closePreview">
+                <div class="o_doc_modal" t-on-click.stop="">
+
+                    <div class="o_doc_modal_header">
+                        <div class="o_doc_modal_title">
+                            <i t-attf-class="fa #{state.previewDoc.icon} me-2"/>
+                            <span t-esc="state.previewDoc.name"/>
+                        </div>
+                        <div class="o_doc_modal_actions">
+                            <button
+                                class="o_doc_modal_btn"
+                                title="Download"
+                                t-on-click="(ev) => this.downloadDoc(ev, state.previewDoc)">
+                                <i class="fa fa-download"/> Download
+                            </button>
+                            <button
+                                class="o_doc_modal_btn o_doc_modal_btn_close"
+                                title="Close"
+                                t-on-click="closePreview">
+                                <i class="fa fa-times"/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="o_doc_modal_body">
+                        <t t-if="state.previewDoc.mimetype === 'application/pdf'">
+                            <iframe
+                                t-att-src="state.previewDoc.previewUrl"
+                                frameborder="0"
+                                width="100%"
+                                height="100%"
+                                title="PDF Preview"
+                            />
+                        </t>
+                        <t t-else="">
+                            <div class="o_doc_modal_no_preview">
+                                <i t-attf-class="fa fa-4x #{state.previewDoc.icon}"/>
+                                <p>Preview not available for this file type.</p>
+                                <button
+                                    class="o_doc_modal_btn mt-3"
+                                    t-on-click="(ev) => this.downloadDoc(ev, state.previewDoc)">
+                                    <i class="fa fa-download me-1"/> Download to view
+                                </button>
+                            </div>
+                        </t>
+                    </div>
+
+                </div>
+            </div>
+        </t>
+
+    </div>
+</t>
+
+</templates>

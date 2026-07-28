@@ -1,0 +1,29 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_partner_invoice_tree" model="ir.ui.view">
+        <field name="name">res.partner.invoice.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="invoice_case_count"/>
+                <field name="invoice_total_amount"/>
+
+                <button
+                    name="action_open_invoice_wizard"
+                    string="Generate Invoice"
+                    type="object"
+                    class="btn-primary"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_partner_invoice_server" model="ir.actions.server">
+        <field name="name">Invoices</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = env['res.partner'].action_invoice_customers()
+        </field>
+    </record>
+</odoo>
