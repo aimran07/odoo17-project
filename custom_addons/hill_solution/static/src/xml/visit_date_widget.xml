@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+    <t t-name="hill_solution.VisitDateWidget">
+        <t t-set="showSeparator" t-value="false" />
+        <div class="d-flex gap-2 align-items-center" t-ref="root">
+            <t t-if="props.readonly">
+                <span class="text-truncate" t-esc="formattedValue" />
+            </t>
+            <t t-else="">
+                <input
+                    t-ref="start-date"
+                    type="text"
+                    t-att-id="props.id"
+                    class="o_input cursor-pointer"
+                    autocomplete="off"
+                    t-att-placeholder="props.placeholder"
+                    t-att-value="formattedValue"
+                    t-att-data-field="props.name"
+                    t-on-input="onInput"
+                    t-on-click="() => this.openPicker()"
+                />
+            </t>
+        </div>
+    </t>
+</template>

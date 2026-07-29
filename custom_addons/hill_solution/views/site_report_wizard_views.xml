@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_site_report_wizard_form" model="ir.ui.view">
+        <field name="name">site.report.wizard.form</field>
+        <field name="model">site.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Visit Report Preview" class="o_report_preview_wizard">
+                <field name="state" invisible="1"/>
+                <field name="preview_url" invisible="1"/>
+                <field name="attachment_id" invisible="1"/>
+                <field name="site_report_id" invisible="1"/>
+
+                <header>
+                    <button name="action_open_preview"
+                            string="Open Preview"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state == 'preview'"/>
+                    <button name="action_save_report"
+                            string="Save to Documents"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state != 'preview'"/>
+                    <button name="action_back"
+                            string="Back"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="state != 'preview'"/>
+                    <button string="Close"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </header>
+
+                <sheet>
+                    <div class="o_report_preview_form" invisible="state != 'form'">
+                        <div class="oe_title">
+                            <h1>Visit Report Preview</h1>
+                        </div>
+                        <field name="site_report_id" invisible="1"/>
+                    </div>
+
+                    <div class="o_report_preview_frame" invisible="state != 'preview'">
+                        <field name="preview_html" nolabel="1" readonly="1"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,10 @@
+/* Booked date cell — greyed out, not clickable */
+.o_date_picker .o_visit_date_booked,
+.o_datetime_picker .o_visit_date_booked {
+    color: #bbb !important;
+    background-color: #f5f5f5 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    text-decoration: line-through;
+    opacity: 0.5;
+}

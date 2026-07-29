@@ -1,0 +1,44 @@
+<odoo>
+    <record id="stage_new" model="hill.case.stage">
+        <field name="name">New Case</field>
+        <field name="code">new</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="stage_appointment" model="hill.case.stage">
+        <field name="name">Appointment</field>
+        <field name="code">appointment</field>
+        <field name="sequence">2</field>
+    </record>
+
+    <record id="stage_visit" model="hill.case.stage">
+        <field name="name">Visit</field>
+        <field name="code">visit</field>
+        <field name="sequence">3</field>
+    </record>
+
+    <record id="stage_study" model="hill.case.stage">
+        <field name="name">Study</field>
+        <field name="code">study</field>
+        <field name="sequence">4</field>
+    </record>
+
+    <record id="stage_invoice_payment" model="hill.case.stage">
+        <field name="name">Invoice/Payment</field>
+        <field name="code">invoice_payment</field>
+        <field name="sequence">5</field>
+    </record>
+
+    <record id="stage_done" model="hill.case.stage">
+        <field name="name">Done</field>
+        <field name="code">done</field>
+        <field name="sequence">6</field>
+    </record>
+
+    <record id="stage_cancelled" model="hill.case.stage">
+        <field name="name">Cancelled</field>
+        <field name="code">cancelled</field>
+        <field name="sequence">7</field>
+        <field name="fold">True</field>
+    </record>
+</odoo>

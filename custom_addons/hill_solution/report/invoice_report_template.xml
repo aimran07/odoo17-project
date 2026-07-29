@@ -1,0 +1,46 @@
+<odoo>
+    <template id="invoice_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Invoice</h2>
+                        <br/>
+                        <strong>Customer :</strong>
+                        <span t-field="o.partner_id"/>
+                        <br/>
+                        <strong>Invoice No :</strong>
+                        <span t-field="o.name"/>
+                        <br/>
+                        <table class="table table-sm mt32">
+                            <thead>
+                                <tr>
+                                    <th>Case No</th>
+                                    <th>Service</th>
+                                    <th class="text-end">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="line">
+                                    <td>
+                                        <span t-field="line.case_number"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.service_type"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-field="line.amount"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3 class="text-end">
+                            Total :
+                            <span t-field="o.amount_total"/>
+                        </h3>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

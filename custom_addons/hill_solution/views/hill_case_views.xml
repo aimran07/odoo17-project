@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- List View -->
+    <record id="view_hill_case_tree" model="ir.ui.view">
+        <field name="name">hill.case.list</field>
+        <field name="model">hill.case</field>
+        <field name="arch" type="xml">
+            <tree string="Cases">
+                <field name="case_number" />
+                <field name="name" />
+                <field name="client_type" widget="badge" />
+                <field name="validated_badge" widget="badge" />
+                <field name="stage_id" widget="badge" />
+                <field name="technician_name" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_hill_case_form" model="ir.ui.view">
+        <field name="name">hill.case.form</field>
+        <field name="model">hill.case</field>
+        <field name="arch" type="xml">
+            <form string="Case">
+                <header>
+                    <field name="stage_id" widget="statusbar" />
+
+                    <field name="has_pending_approval" invisible="1" />
+                    <field name="has_site_visit" invisible="1" />
+
+                    <field name="is_visit" invisible="1" />
+                    <field name="is_new_case" invisible="1" />
+                    <field name="is_appointment" invisible="1" />
+                    <field name="is_validated" invisible="1" />
+                    <field name="is_study" invisible="1" />
+                    <field name="is_study_status_completed" invisible="1" />
+                    <field name="is_invoice_payment" invisible="1" />
+                    <field name="is_payment_status_paid" invisible="1" />
+
+                    <field name="user_is_manager" invisible="1" />
+                    <field name="can_create_study" invisible="1" />
+
+                    <button name="action_validate_case" string="Validate"
+                            type="object"
+                            class="btn-warning"
+                            invisible="not is_new_case or is_validated" />
+
+                    <button name="action_create_visit_from_case" string="Create Visit"
+                            type="object" class="oe_highlight"
+                            invisible="not is_appointment or has_site_visit"
+                            groups="hill_solution.hill_case_manager" />
+
+                    <button name="action_approve_visit_details" string="Approve"
+                            type="object"
+                            class="btn-success"
+                            invisible="not is_visit or not has_pending_approval"
+                            groups="hill_solution.hill_case_manager" />
+                    <button name="action_reject_visit_details" string="Reject"
+                            type="object"
+                            class="btn-danger"
+                            invisible="not is_visit or not has_pending_approval"
+                            groups="hill_solution.hill_case_manager" />
+
+                    <button name="action_create_study" string="Create Study"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not can_create_study"
+                            groups="hill_solution.hill_case_manager" />
+
+                    <button name="action_validate_study" string="Validate"
+                            type="object"
+                            class="btn-warning"
+                            invisible="not is_study_status_completed or not is_study" />
+
+                    <button name="action_request_modification" string="Request Modification"
+                            type="object"
+                            class="btn-warning"
+                            invisible="not is_study_status_completed or not is_study" />
+
+                    <button name="action_register_payment" string="Register Payment"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not is_invoice_payment or is_payment_status_paid"
+                            groups="hill_solution.hill_case_manager" />
+                    <button name="action_create_invoice" string="Create Invoice"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not is_invoice_payment"
+                            groups="hill_solution.hill_case_manager" />
+
+
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="case_number" />
+                        </h1>
+                        <h2>
+                            <field name="name" placeholder="Case Title" required="true" />
+                        </h2>
+                    </div>
+                    <group>
+                        <group string="Case Info">
+                            <field name="client_type" readonly="1" />
+                            <field name="service_type" />
+                            <field name="is_visit_required" invisible="1" />
+                            <field name="date_deadline" />
+                        </group>
+                        <group string="Assignment">
+                            <field name="agent_name" widget="many2one_avatar_user" />
+                            <field name="technician_name" widget="many2one_avatar_user" readonly="not user_is_manager" />
+                            <field name="partner_id" readonly="1" />
+                        </group>
+                    </group>
+                    <group string="Appointment">
+                        <field name="appointment_status" readonly="not user_is_manager" />
+                    </group>
+                    <group string="B2B Information" invisible="client_type != 'b2b'">
+                        <group>
+                            <field name="company_name" />
+                            <field name="contact_firstname" />
+                            <field name="contact_lastname" />
+                            <field name="b2b_phone" />
+                        </group>
+                        <group>
+                            <field name="siret" />
+                            <field name="site_address" />
+                        </group>
+                    </group>
+                    <group string="B2C Information" invisible="client_type != 'b2c'">
+                        <group>
+                            <field name="beneficiary_firstname" />
+                            <field name="beneficiary_lastname" />
+                            <field name="beneficiary_phone" />
+                            <field name="beneficiary_status" />
+                        </group>
+                        <group>
+                            <field name="residential_address" />
+                        </group>
+                    </group>
+                    <group string="Technical Visit" invisible="not is_visit_required">
+                        <group>
+                            <field name="visit_date" widget="visit_date_widget" readonly="not user_is_manager" />
+                            <field name="visit_duration" readonly="not user_is_manager" />
+                        </group>
+                    </group>
+                    <group string="Study" invisible="service_type not in ('study','both')">
+                        <group>
+                            <field name="study_status" />
+                            <field name="study_nature" />
+                            <field name="study_data" placeholder="Enter study input data (for studies without visit)" />
+                        </group>
+                    </group>
+                    <group string="Financial">
+                        <group>
+                            <field name="amount_total" readonly="not user_is_manager" />
+                            <field name="payment_status" readonly="not user_is_manager" />
+                        </group>
+                        <group>
+                            <field name="invoice_status" readonly="1" />
+                            <field name="currency_id" invisible="1" readonly="1" />
+                            <field name="invoice_attachment_id" string="Invoice PDF"
+                                   options="{'no_create': True}" />
+                        </group>
+                    </group>
+                    <group col="2" string="Payments" invisible="not payment_ids">
+                        <field name="payment_ids" colspan="2" readonly="1" nolabel="1">
+                            <tree>
+                                <field name="payment_date" />
+                                <field name="payment_method" />
+                                <field name="amount" />
+                                <field name="reference" />
+                            </tree>
+                        </field>
+                    </group>
+
+                    <notebook>
+                        <page string="Site Details">
+                            <group string="Site Data">
+                                <group>
+                                    <field name="length" />
+                                    <field name="breadth" />
+                                    <field name="height" />
+                                    <field name="area" />
+                                </group>
+                                <group>
+                                    <field name="volume" />
+                                    <field name="temperature" />
+                                    <field name="pressure" />
+                                </group>
+                            </group>
+                            <group string="Visit Notes">
+                                <field name="visit_notes" nolabel="1" readonly="1" />
+                            </group>
+                        </page>
+                        <page string="Associated Documents" name="case_documents">
+                            <field name="document_ids" widget="hill_document_widget" readonly="1" />
+                        </page>
+                        <page string="Associated Photos" name="case_photos">
+                            <field name="photo_ids" widget="hill_photo_widget" readonly="1" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_hill_case_kanban" model="ir.ui.view">
+        <field name="name">hill.case.kanban</field>
+        <field name="model">hill.case</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" default_group_by="stage_id" quick_create="false">
+
+                <field name="case_number"/>
+                <field name="name"/>
+                <field name="company_name"/>
+                <field name="client_type"/>
+                <field name="technician_name"/>
+                <field name="technician_avatar"/>
+                <field name="appointment_status"/>
+                <field name="site_report_stage"/>
+                <field name="stage_id"/>
+                <field name="stage_code"/>
+                <field name="beneficiary_firstname"/>
+                <field name="beneficiary_lastname"/>
+                <field name="contact_firstname"/>
+                <field name="contact_lastname"/>
+                <field name="is_validated"/>
+                <field name="id"/>
+                <field name="study_status"/>
+                <field name="payment_status"/>
+
+                <templates>
+                    <t t-name="kanban-box">
+
+                        <div t-att-class="'hc_kanban_card oe_kanban_global_click ' +
+                        (record.stage_code.raw_value == 'new' ? 'hc_stage_new' :
+                        record.stage_code.raw_value == 'appointment' ? 'hc_stage_appointment' :
+                        record.stage_code.raw_value == 'visit' ? 'hc_stage_visit' :
+                        record.stage_code.raw_value == 'study' ? 'hc_stage_study' :
+                        record.stage_code.raw_value == 'invoice_payment' ? 'hc_stage_invoice' :
+                        record.stage_code.raw_value == 'done' ? 'hc_stage_done' :
+                        record.stage_code.raw_value == 'cancelled' ? 'hc_stage_cancelled' : '')">
+
+                            <!-- Stage color accent bar -->
+                            <div class="hc_card_accent"/>
+
+                            <!-- Card body -->
+                            <div class="hc_card_body">
+
+                                <!-- Header: case number + client type badge -->
+                                <div class="hc_card_header">
+                                    <span class="hc_case_number">
+                                        <t t-esc="record.case_number.value"/>
+                                    </span>
+                                    <div class="hc_card_header_right">
+                                        <span t-if="record.is_validated.raw_value" class="hc_badge hc_badge_validated">
+                                            validated
+                                        </span>
+                                        <span t-if="record.client_type.raw_value == 'b2b'" class="hc_badge hc_badge_b2b">
+                                            B2B
+                                        </span>
+                                        <span t-if="record.client_type.raw_value == 'b2c'" class="hc_badge hc_badge_b2c">
+                                            B2C
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                                <!-- Case title -->
+                                <!-- <div class="hc_card_title">
+                                    <t t-esc="record.name.value or 'Untitled Case'"/>
+                                </div> -->
+                                <div class="hc_card_title">
+                                    <t t-if="record.name.value">
+                                        <t t-esc="record.name.value"/>
+                                    </t>
+                                    <t t-else="">
+                                        Untitled Case
+                                    </t>
+                                </div>
+
+                                <!-- Client name -->
+                                <div class="hc_card_client">
+                                    <i class="fa fa-building me-1"/>
+                                    <t t-if="record.client_type.raw_value == 'b2b'">
+                                        <t t-esc="record.company_name.value or '-'"/>
+                                    </t>
+                                    <t t-if="record.client_type.raw_value == 'b2c'">
+                                        <t t-esc="(record.beneficiary_firstname.value or '') + ' ' + (record.beneficiary_lastname.value or '')"/>
+                                    </t>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="hc_card_divider"/>
+
+                                <!-- Footer: agent + visit status -->
+                                <div class="hc_card_footer">
+                                    <div class="hc_card_agent">
+                                        <t t-if="record.technician_avatar.raw_value">
+                                            <img t-attf-src="/web/image/hill.case/{{ record.id.raw_value }}/technician_avatar/24x24"
+                                                class="hc_agent_avatar"
+                                                t-att-alt="record.technician_name.value"/>
+                                        </t>
+                                        <t t-else="">
+                                            <i class="fa fa-user-circle hc_agent_avatar_icon"/>
+                                        </t>
+                                        <span class="hc_agent_name">
+                                            <t t-esc="record.technician_name.value or 'Unassigned'"/>
+                                        </span>
+                                    </div>
+                                    <div t-if="record.appointment_status.raw_value or
+                                               record.appointment_status.raw_value or
+                                               record.site_report_stage.raw_value">
+                                        <span t-if="record.stage_code.raw_value == 'appointment'"
+                                            class="hc_visit_badge">
+                                            <t t-esc="record.appointment_status.value"/>
+                                        </span>
+                                        <span t-if="record.stage_code.raw_value == 'visit' and record.site_report_stage.raw_value"
+                                            class="hc_visit_badge">
+                                            <t t-esc="record.site_report_stage.value"/>
+                                        </span>
+                                        <span t-if="record.stage_code.raw_value == 'study'"
+                                            class="hc_visit_badge">
+                                            <t t-esc="record.study_status.value"/>
+                                        </span>
+                                        <span t-if="record.stage_code.raw_value == 'invoice_payment'"
+                                            class="hc_visit_badge">
+                                            <t t-esc="record.payment_status.value"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!-- Action -->
+    <record id="action_hill_case" model="ir.actions.act_window">
+        <field name="name">Cases</field>
+        <field name="res_model">hill.case</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Case!
+            </p>
+        </field>
+    </record>
+</odoo>

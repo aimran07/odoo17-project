@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_hill_solution_root"
+        name="Hill Solution"
+        sequence="10"
+        groups="hill_solution.hill_case_group,hill_solution.hill_case_agent,hill_solution.hill_case_manager,hill_solution.hill_case_technician"/>
+
+    <menuitem
+        id="menu_hill_case"
+        name="Cases"
+        parent="menu_hill_solution_root"
+        action="action_hill_case"
+        sequence="10"
+        groups="hill_solution.hill_case_group,hill_solution.hill_case_manager,hill_solution.hill_case_agent"/>
+
+    <menuitem
+        id="menu_site_report"
+        name="Technician Visits"
+        parent="menu_hill_solution_root"
+        action="action_site_report"
+        sequence="20"
+        groups="hill_solution.hill_case_manager,hill_solution.hill_case_technician"/>
+
+    <menuitem
+        id="menu_hill_study"
+        name="Studies"
+        parent="menu_hill_solution_root"
+        action="action_hill_study"
+        sequence="30"
+        groups="hill_solution.hill_case_group,hill_solution.hill_case_manager,hill_solution.hill_case_agent"/>
+
+    <menuitem
+        id="menu_technician_availability"
+        name="Technician Availability"
+        parent="menu_hill_solution_root"
+        sequence="30"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
+        id="menu_invoice_queue"
+        name="Invoices"
+        parent="menu_hill_solution_root"
+        action="action_partner_invoice_server"
+        sequence="50"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
+        id="menu_hill_invoice_history"
+        name="Invoice History"
+        parent="menu_hill_solution_root"
+        action="action_hill_invoice"
+        sequence="60"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
+        id="menu_master_calendar"
+        name="Master Calendar"
+        parent="menu_technician_availability"
+        action="action_site_report_master_calendar"
+        sequence="10"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
+        id="menu_workload_summary"
+        name="Workload Summary"
+        parent="menu_technician_availability"
+        action="action_site_report_workload"
+        sequence="20"
+        groups="hill_solution.hill_case_manager"/>
+</odoo>
