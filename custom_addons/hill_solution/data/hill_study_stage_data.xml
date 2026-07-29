@@ -1,0 +1,31 @@
+<odoo>
+    <record id="stage_to_process" model="hill.study.stage">
+        <field name="name">To Process</field>
+        <field name="code">to_process</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="stage_in_progress" model="hill.study.stage">
+        <field name="name">In Progress</field>
+        <field name="code">in_progress</field>
+        <field name="sequence">2</field>
+    </record>
+
+    <record id="stage_completed" model="hill.study.stage">
+        <field name="name">Completed</field>
+        <field name="code">completed</field>
+        <field name="sequence">3</field>
+    </record>
+
+    <record id="stage_to_modify" model="hill.study.stage">
+        <field name="name">To Modify</field>
+        <field name="code">to_modify</field>
+        <field name="sequence">4</field>
+    </record>
+
+    <record id="stage_validated" model="hill.study.stage">
+        <field name="name">Validated</field>
+        <field name="code">validated</field>
+        <field name="sequence">5</field>
+    </record>
+</odoo>

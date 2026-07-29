@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-name="hill_dashboard.DashboardKpiCard" owl="1">
+        <div class="o_dashboard_kpi_card">
+            <div class="o_dashboard_kpi_value" t-att-class="'o_dashboard_color_' + props.color">
+                <t t-esc="props.value"/>
+            </div>
+            <div class="o_dashboard_kpi_title">
+                <t t-esc="props.title"/>
+            </div>
+        </div>
+    </t>
+</templates>

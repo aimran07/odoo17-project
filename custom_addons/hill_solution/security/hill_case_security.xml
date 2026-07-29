@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- User -->
+    <record id="hill_case_group" model="res.groups">
+        <field name="name">Hill Solution / User</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Agent -->
+    <record id="hill_case_agent" model="res.groups">
+        <field name="name">Hill Solution / Agent</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Manager -->
+    <record id="hill_case_manager" model="res.groups">
+        <field name="name">Hill Solution / Manager</field>
+        <field name="implied_ids" eval="[(4, ref('hill_solution.hill_case_group'))]"/>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <!-- Technician -->
+    <record id="hill_case_technician" model="res.groups">
+        <field name="name">Hill Solution / Technician</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Portal User -->
+    <record id="rule_hill_case_portal" model="ir.rule">
+        <field name="name">Hill Case: Portal user sees own cases</field>
+        <field name="model_id" ref="model_hill_case"/>
+        <field name="domain_force">
+            [('partner_id', '=', user.partner_id.id)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- Technician rule on hill.case -->
+    <record id="rule_hill_case_technician" model="ir.rule">
+        <field name="name">Hill Case: Technician sees own assigned cases</field>
+        <field name="model_id" ref="model_hill_case"/>
+        <field name="domain_force">
+            [('technician_name', '=', user.employee_id.id)]
+        </field>
+        <field name="groups" eval="[(4, ref('hill_solution.hill_case_technician'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- Portal rule on hill.invoice -->
+    <record id="rule_hill_invoice_portal" model="ir.rule">
+        <field name="name">Hill Invoice: Portal user sees own invoices</field>
+        <field name="model_id" ref="model_hill_invoice"/>
+        <field name="domain_force">
+            [('partner_id', '=', user.partner_id.id)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- Technician rule on site.report -->
+    <record id="rule_site_report_technician" model="ir.rule">
+        <field name="name">Site Report: Technician sees own visits only</field>
+        <field name="model_id" ref="model_site_report"/>
+        <field name="domain_force">
+            [('technician_name', '=', user.employee_id.id)]
+        </field>
+        <field name="groups" eval="[(4, ref('hill_solution.hill_case_technician'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+</odoo>

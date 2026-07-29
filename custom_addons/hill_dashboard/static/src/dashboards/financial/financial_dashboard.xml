@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-name="hill_dashboard.FinancialDashboard" owl="1">
+        <div class="o_hill_dashboard">
+            <t t-if="state.loading">
+                <div class="o_dashboard_loading">
+                    Loading Dashboard...
+                </div>
+            </t>
+            <t t-else="">
+
+                <!-- KPI -->
+                <div class="o_dashboard_cards">
+
+                    <DashboardKpiCard
+                        title="'Paid Cases'"
+                        value="state.data.paid_cases"
+                        color="'green'"
+                    />
+
+                    <DashboardKpiCard
+                        title="'Unpaid Cases'"
+                        value="state.data.unpaid_cases"
+                        color="'red'"
+                    />
+
+                    <DashboardKpiCard
+                        title="'Awaiting Payment'"
+                        value="state.data.awaiting_cases"
+                        color="'orange'"
+                    />
+
+                    <DashboardKpiCard
+                        title="'Revenue'"
+                        value="state.data.total_revenue"
+                        color="'blue'"
+                    />
+
+                </div>
+
+                <!-- Revenue Chart -->
+                <div class="o_dashboard_charts">
+                    <div class="o_dashboard_chart_card">
+                        <div class="o_dashboard_section_title">
+                            Monthly Revenue
+                        </div>
+
+                        <DashboardChart
+                            config="state.data.revenueChart"
+                        />
+
+                    </div>
+                </div>
+
+                <!-- Issued Invoices -->
+                <div class="o_dashboard_table_card">
+                    <div class="o_dashboard_section_title">
+                        Issued Invoices
+                    </div>
+                    <table class="o_dashboard_table">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Invoice</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="state.data.invoices"
+                               t-as="invoice"
+                               t-key="invoice.invoice_number">
+                                <tr>
+                                    <td>
+                                        <t t-esc="invoice.customer"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="invoice.invoice_number"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="invoice.date"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="invoice.amount"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="invoice.status"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Outstanding -->
+                <div class="o_dashboard_table_card">
+                    <div class="o_dashboard_section_title">
+                        Outstanding Payments
+                    </div>
+                    <table class="o_dashboard_table">
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Outstanding Cases</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="state.data.outstanding"
+                               t-as="item"
+                               t-key="item.customer">
+                                <tr>
+                                    <td>
+                                        <t t-esc="item.customer"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="item.cases"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-name="hill_dashboard.CommercialDashboard" owl="1">
+        <div class="o_content">
+            <div class="o_hill_dashboard">
+                <t t-if="state.loading">
+                    <div class="o_dashboard_loading">
+                        Loading Dashboard...
+                    </div>
+                </t>
+                <t t-else="">
+                    <!-- KPI Cards -->
+                    <div class="o_dashboard_cards">
+                        <DashboardKpiCard
+                            title="'Total Cases'"
+                            value="state.data.total_cases"
+                            color="'blue'"
+                        />
+                        <DashboardKpiCard
+                            title="'B2B Cases'"
+                            value="state.data.b2b_cases"
+                            color="'green'"
+                        />
+                        <DashboardKpiCard
+                            title="'B2C Cases'"
+                            value="state.data.b2c_cases"
+                            color="'orange'"
+                        />
+                        <DashboardKpiCard
+                            title="'Active Clients'"
+                            value="state.data.active_clients"
+                            color="'purple'"
+                        />
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="o_dashboard_charts">
+                        <div class="o_dashboard_chart_card">
+                            <div class="o_dashboard_section_title">
+                                Monthly Cases
+                            </div>
+                            <DashboardChart
+                                config="state.data.monthlyChart"
+                            />
+                        </div>
+                        <div class="o_dashboard_chart_card">
+                            <div class="o_dashboard_section_title">
+                                B2B / B2C Distribution
+                            </div>
+                            <DashboardChart
+                                config="state.data.clientTypeChart"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="o_dashboard_table_card">
+                        <div class="o_dashboard_section_title">
+                            Cases Per Client
+                        </div>
+                        <table class="o_dashboard_table">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Cases</th>
+                                    <th>Client Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="state.data.clients"
+                                t-as="client"
+                                t-key="client.name">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="client.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="client.cases"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="client.client_type"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

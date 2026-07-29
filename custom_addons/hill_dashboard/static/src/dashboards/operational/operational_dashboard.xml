@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-name="hill_dashboard.OperationalDashboard" owl="1">
+        <div class="o_hill_dashboard">
+            <t t-if="state.loading">
+                <div class="o_dashboard_loading">
+                    Loading Dashboard...
+                </div>
+            </t>
+            <t t-else="">
+
+                <!-- KPI -->
+                <div class="o_dashboard_cards">
+
+                    <DashboardKpiCard
+                        title="'Total Cases'"
+                        value="state.data.total_cases"
+                        color="'blue'"
+                    />
+
+                    <DashboardKpiCard
+                        title="'Open Cases'"
+                        value="state.data.in_progress_cases"
+                        color="'green'"
+                    />
+
+                    <DashboardKpiCard
+                        title="'Completed Cases'"
+                        value="state.data.completed_cases"
+                        color="'purple'"
+                    />
+
+                    <DashboardKpiCard
+                        title="'Overdue Cases'"
+                        value="state.data.overdue_count"
+                        color="'red'"
+                    />
+
+                </div>
+
+                <!-- Charts -->
+                <div class="o_dashboard_charts">
+                    <div class="o_dashboard_chart_card">
+                        <div class="o_dashboard_section_title">
+                            Cases Per Agent
+                        </div>
+
+                        <DashboardChart
+                            config="state.data.agentChart"
+                        />
+                    </div>
+                    <div class="o_dashboard_chart_card">
+                        <div class="o_dashboard_section_title">
+                            Visits Per Technician
+                        </div>
+
+                        <DashboardChart
+                            config="state.data.technicianChart"
+                        />
+                    </div>
+                </div>
+
+                <!-- Overdue Table -->
+                <div class="o_dashboard_table_card">
+                    <div class="o_dashboard_section_title">
+                        Overdue Cases
+                    </div>
+                    <table class="o_dashboard_table">
+                        <thead>
+                            <tr>
+                                <th>Case No</th>
+                                <th>Customer</th>
+                                <th>Assigned To</th>
+                                <th>Stage</th>
+                                <th>Days</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="state.data.overdue_cases"
+                               t-as="case"
+                               t-key="case.case_number">
+                                <tr>
+                                    <td>
+                                        <t t-esc="case.case_number"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="case.customer"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="case.assigned_to"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="case.stage"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="case.days"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
