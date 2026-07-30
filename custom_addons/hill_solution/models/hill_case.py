@@ -44,10 +44,16 @@ class HillCase(models.Model):
         string='Client Type', required=True, tracking=True,
     )
     service_type = fields.Selection(
-        [('both', 'Technical Visit + Study'),
-         ('study', 'Study')],
+        [('ndd', 'NDD'),
+         ('heat_destratifier', 'Heat destratifier'),
+         ('led_study', 'LED study'),
+         ('study_163', 'Study 163'),
+         ('regulatory_audit', 'Regulatory audit'),
+         ('sizing_171', 'Sizing 171'),
+         ('study_174', 'Study 174'),
+         ('study_175', 'Study 175'),
+         ('study_179', 'Study 179')],
         string='Service Type',
-        # required=True,
         tracking=True,
     )
     prestation_type = fields.Selection(
@@ -111,10 +117,38 @@ class HillCase(models.Model):
         store=False
     )
 
+    sub_status = fields.Char(
+        string='Status',
+        compute='_compute_sub_status',
+        store=True,
+    )
+
     @api.depends("is_validated")
     def _compute_validated_badge(self):
         for rec in self:
             rec.validated_badge = _("VALIDATED") if rec.is_validated else False
+
+    @api.depends('stage_code', 'appointment_status', 'site_report_ids.stage_id',
+                 'study_status', 'payment_status')
+    def _compute_sub_status(self):
+        for case in self:
+            if case.stage_code == 'appointment':
+                case.sub_status = dict(
+                    case._fields['appointment_status'].selection
+                ).get(case.appointment_status, '')
+            elif case.stage_code == 'visit':
+                report = case.site_report_ids[:1]
+                case.sub_status = report.stage_id.name if report else ''
+            elif case.stage_code == 'study':
+                case.sub_status = dict(
+                    case._fields['study_status'].selection
+                ).get(case.study_status, '')
+            elif case.stage_code == 'invoice_payment':
+                case.sub_status = dict(
+                    case._fields['payment_status'].selection
+                ).get(case.payment_status, '')
+            else:
+                case.sub_status = ''
 
 
 
@@ -233,13 +267,10 @@ class HillCase(models.Model):
             vals['case_number'] = self.env['ir.sequence'].next_by_code('hill.case') or _('New')
         return super(HillCase, self).create(vals)
 
-    @api.depends('service_type', 'study_nature')
+    @api.depends('service_type')
     def _compute_is_visit_required(self):
         for rec in self:
-            if rec.service_type == 'study' and rec.study_nature in ('destratification', 'led'):
-                rec.is_visit_required = False
-            else:
-                rec.is_visit_required = rec.service_type in ('technical_visit', 'both')
+            rec.is_visit_required = bool(rec.service_type)
 
     @api.model
     def _read_group_stage_ids(self, stages, domain, order):

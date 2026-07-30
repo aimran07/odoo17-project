@@ -25,10 +25,15 @@ class HillInvoiceLine(models.Model):
     )
 
     service_type = fields.Selection(
-        [
-            ("study", "Study"),
-            ("both", "Technical Visit + Study"),
-        ],
+        [('ndd', 'NDD'),
+         ('heat_destratifier', 'Heat destratifier'),
+         ('led_study', 'LED study'),
+         ('study_163', 'Study 163'),
+         ('regulatory_audit', 'Regulatory audit'),
+         ('sizing_171', 'Sizing 171'),
+         ('study_174', 'Study 174'),
+         ('study_175', 'Study 175'),
+         ('study_179', 'Study 179')],
         string="Service Type",
         readonly=True,
     )

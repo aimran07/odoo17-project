@@ -56,8 +56,15 @@ class SiteReport(models.Model):
         tracking=True,
     )
     service_type = fields.Selection(
-        [('both', 'Technical Visit + Study'),
-         ('study', 'Study')],
+        [('ndd', 'NDD'),
+         ('heat_destratifier', 'Heat destratifier'),
+         ('led_study', 'LED study'),
+         ('study_163', 'Study 163'),
+         ('regulatory_audit', 'Regulatory audit'),
+         ('sizing_171', 'Sizing 171'),
+         ('study_174', 'Study 174'),
+         ('study_175', 'Study 175'),
+         ('study_179', 'Study 179')],
         string='Service Type',
         tracking=True,
     )
