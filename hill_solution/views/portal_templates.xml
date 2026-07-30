@@ -262,20 +262,29 @@
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label class="col-form-label">Service Type</label>
-                                            <select name="service_type" class="form-select">
-                                                <option value="">-- Select --</option>
-                                                <option value="both" t-att-selected="post.get('service_type') == 'both' or None">
-                                                    Technical Visit + Study
-                                                </option>
-                                                <option value="study" t-att-selected="post.get('service_type') == 'study' or None">
-                                                    Study
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label class="col-form-label label-optional" for="siret">SIRET Number</label>
+                                             <select name="service_type" class="form-select">
+                                                 <option value="">-- Select --</option>
+                                                 <option value="ndd" t-att-selected="post.get('service_type') == 'ndd' or None">
+                                                     NDD
+                                                 </option>
+                                                 <option value="heat_destratifier" t-att-selected="post.get('service_type') == 'heat_destratifier' or None">
+                                                     Heat destratifier
+                                                 </option>
+                                                 <option value="led_study" t-att-selected="post.get('service_type') == 'led_study' or None">
+                                                     LED study
+                                                 </option>
+                                                 <option value="study_163" t-att-selected="post.get('service_type') == 'study_163' or None">
+                                                     Study 163
+                                                 </option>
+                                                 <option value="regulatory_audit" t-att-selected="post.get('service_type') == 'regulatory_audit' or None">
+                                                     Regulatory audit
+                                                 </option>
+                                             </select>
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="col-md-6 mb-3">
+                                             <label class="col-form-label label-optional" for="siret">SIRET Number</label>
                                             <input type="text" class="form-control" t-att-value="partner.hill_siret or ''" readonly="readonly"/>
                                         </div>
                                         <div class="col-md-6 mb-3">
@@ -327,8 +336,10 @@
                                              <label class="col-form-label">Service Type</label>
                                              <select name="service_type" class="form-select">
                                                  <option value="">-- Select --</option>
-                                                 <option value="both" t-att-selected="post.get('service_type') == 'both' or None">Technical Visit + Study</option>
-                                                 <option value="study" t-att-selected="post.get('service_type') == 'study' or None">Study</option>
+                                                 <option value="sizing_171" t-att-selected="post.get('service_type') == 'sizing_171' or None">Sizing 171</option>
+                                                 <option value="study_174" t-att-selected="post.get('service_type') == 'study_174' or None">Study 174</option>
+                                                 <option value="study_175" t-att-selected="post.get('service_type') == 'study_175' or None">Study 175</option>
+                                                 <option value="study_179" t-att-selected="post.get('service_type') == 'study_179' or None">Study 179</option>
                                              </select>
                                          </div>
                                      </div>

@@ -11,6 +11,7 @@
                 <field name="client_type" widget="badge" />
                 <field name="validated_badge" widget="badge" />
                 <field name="stage_id" widget="badge" />
+                <field name="sub_status" widget="badge" />
                 <field name="technician_name" />
             </tree>
         </field>
@@ -144,7 +145,7 @@
                             <field name="visit_duration" readonly="not user_is_manager" />
                         </group>
                     </group>
-                    <group string="Study" invisible="service_type not in ('study','both')">
+                    <group string="Study">
                         <group>
                             <field name="study_status" />
                             <field name="study_nature" />
