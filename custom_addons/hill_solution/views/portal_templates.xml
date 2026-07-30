@@ -338,15 +338,15 @@
                                              <label class="col-form-label" for="residential_address">Residential Address <span class="text-danger">*</span></label>
                                              <input type="text" name="residential_address" class="form-control" t-att-value="post.get('residential_address', '')"/>
                                          </div>
-                                         <div class="col-md-6 mb-3">
+                                         <!-- <div class="col-md-6 mb-3">
                                              <label class="col-form-label">Prestation Type <span class="text-danger">*</span></label>
                                              <select name="prestation_type" class="form-select">
-                                                 <option value="">-- Select --</option>
+                                                 <option value=""> Select </option>
                                                  <option value="otg" t-att-selected="post.get('prestation_type') == 'otg' or None">Obligation to Give</option>
                                                  <option value="otd" t-att-selected="post.get('prestation_type') == 'otd' or None">Obligation to Do</option>
                                                  <option value="ontd" t-att-selected="post.get('prestation_type') == 'ontd' or None">Obligation Not to Do</option>
                                              </select>
-                                         </div>
+                                         </div> -->
                                      </div>
                                  </t>
                                  <!-- Documents Section (Common for both B2B and B2C) -->
