@@ -1,0 +1,42 @@
+.o_dashboard_kpi_card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+.o_dashboard_kpi_value {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.o_dashboard_kpi_title {
+    margin-top: 10px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Colors */
+.o_dashboard_color_purple {
+    color: #714B67;
+}
+
+.o_dashboard_color_blue {
+    color: #1976D2;
+}
+
+.o_dashboard_color_green {
+    color: #2E7D32;
+}
+
+.o_dashboard_color_orange {
+    color: #EF6C00;
+}
+
+.o_dashboard_color_red {
+    color: #C62828;
+}
+
+.o_dashboard_color_teal {
+    color: #00897B;
+}

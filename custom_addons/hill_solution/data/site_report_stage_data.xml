@@ -1,0 +1,27 @@
+<odoo>
+
+    <record id="stage_tovisit" model="site.report.stage">
+        <field name="name">To Visit</field>
+        <field name="code">to_visit</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="stage_requested" model="site.report.stage">
+        <field name="name">Requested For Approval</field>
+        <field name="code">requested_for_approval</field>
+        <field name="sequence">2</field>
+    </record>
+
+    <record id="stage_approved" model="site.report.stage">
+        <field name="name">Approved</field>
+        <field name="code">approved</field>
+        <field name="sequence">3</field>
+    </record>
+
+    <record id="stage_rejected" model="site.report.stage">
+        <field name="name">Rejected</field>
+        <field name="code">rejected</field>
+        <field name="sequence">4</field>
+    </record>
+
+</odoo>

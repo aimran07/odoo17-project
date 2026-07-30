@@ -1,0 +1,22 @@
+.o_report_preview_wizard .o_report_preview_frame {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.o_report_preview_wizard .o_report_preview_frame .o_field_html {
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.o_report_preview_wizard .o_report_preview_frame .o_field_html iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
