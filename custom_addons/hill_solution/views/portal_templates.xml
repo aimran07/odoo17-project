@@ -323,29 +323,20 @@
                                              <label class="col-form-label" for="beneficiary_phone">Phone</label>
                                              <input type="tel" name="beneficiary_phone" class="form-control" t-att-value="partner.hill_beneficiary_phone or ''"/>
                                          </div>
-                                         <!-- <div class="col-md-6 mb-3">
+                                         <div class="col-md-6 mb-3">
                                              <label class="col-form-label">Service Type</label>
                                              <select name="service_type" class="form-select">
-                                                 <option value=""> Select </option>
+                                                 <option value="">-- Select --</option>
                                                  <option value="both" t-att-selected="post.get('service_type') == 'both' or None">Technical Visit + Study</option>
                                                  <option value="study" t-att-selected="post.get('service_type') == 'study' or None">Study</option>
                                              </select>
-                                         </div> -->
+                                         </div>
                                      </div>
                                      <!-- Residential Address and Prestation Type -->
                                      <div class="row">
                                          <div class="col-md-6 mb-3">
                                              <label class="col-form-label" for="residential_address">Residential Address <span class="text-danger">*</span></label>
                                              <input type="text" name="residential_address" class="form-control" t-att-value="post.get('residential_address', '')"/>
-                                         </div>
-                                         <div class="col-md-6 mb-3">
-                                             <label class="col-form-label">Prestation Type <span class="text-danger">*</span></label>
-                                             <select name="prestation_type" class="form-select">
-                                                 <option value="">-- Select --</option>
-                                                 <option value="otg" t-att-selected="post.get('prestation_type') == 'otg' or None">Obligation to Give</option>
-                                                 <option value="otd" t-att-selected="post.get('prestation_type') == 'otd' or None">Obligation to Do</option>
-                                                 <option value="ontd" t-att-selected="post.get('prestation_type') == 'ontd' or None">Obligation Not to Do</option>
-                                             </select>
                                          </div>
                                      </div>
                                  </t>
