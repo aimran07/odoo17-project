@@ -146,7 +146,7 @@ class HillCasePortal(CustomerPortal):
             values['success'] = True
             if redirect:
                 return request.redirect(redirect)
-            return request.redirect('/my/account')
+            return request.redirect('/my/home')
 
         countries = request.env['res.country'].sudo().search([])
         states = request.env['res.country.state'].sudo().search([])
@@ -338,8 +338,6 @@ class HillCasePortal(CustomerPortal):
             return request.redirect('/my/account')
 
         error = {}
-        if not post.get('prestation_type'):
-            error['prestation_type'] = 'Please select a prestation type.'
 
         address = None
         if client_type == 'b2b':
@@ -363,7 +361,6 @@ class HillCasePortal(CustomerPortal):
         vals = {
             'client_type': client_type,
             'partner_id': partner.id,
-            'prestation_type': post.get('prestation_type'),
             'service_type': post.get('service_type') or False,
         }
 
