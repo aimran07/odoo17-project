@@ -17,6 +17,7 @@ Features:
     'depends': ['base', 'mail', 'hr', 'website', 'portal'],
     'data': [
         'security/hill_case_security.xml',
+        'security/hide_default_menus.xml',
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
         'data/invoice_sequence.xml',                    # new added
