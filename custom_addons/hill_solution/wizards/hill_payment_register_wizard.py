@@ -1,6 +1,5 @@
 from odoo import models, fields, api, _
 
-
 class HillPaymentRegisterWizard(models.TransientModel):
     _name = 'hill.payment.register.wizard'
     _description = 'Hill Payment Register Wizard'
@@ -10,10 +9,9 @@ class HillPaymentRegisterWizard(models.TransientModel):
     currency_id = fields.Many2one(related='case_id.currency_id', readonly=True)
     payment_date = fields.Date(string='Payment Date', required=True, default=fields.Date.today)
     payment_method = fields.Selection([
-        ('cash', 'Cash'),
         ('bank', 'Bank Transfer'),
-        ('check', 'Check'),
-        ('card', 'Credit Card'),
+        ('credit_card', 'Credit Card'),
+        ('debit_card', 'Debit Card'),
     ], string='Payment Method', required=True, default='bank')
     reference = fields.Char(string='Reference')
     notes = fields.Text(string='Notes')
@@ -32,13 +30,13 @@ class HillPaymentRegisterWizard(models.TransientModel):
             'amount_total': self.amount,
             'payment_status': 'paid',
         })
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Success'),
-                'message': _('Payment registered successfully.'),
-                'type': 'success',
-                'sticky': False,
-            },
-        }
+        # return {
+        #     'type': 'ir.actions.client',
+        #     'tag': 'display_notification',
+        #     'params': {
+        #         'title': _('Success'),
+        #         'message': _('Payment registered successfully.'),
+        #         'type': 'success',
+        #         'sticky': False,
+        #     },
+        # }

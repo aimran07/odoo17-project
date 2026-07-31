@@ -29,6 +29,7 @@ Features:
         'views/site_report_wizard_views.xml',
         'views/hill_study_views.xml',
         'views/hill_payment_register_wizard_views.xml',
+        'views/hill_visit_wizard_views.xml',
         'views/res_partner_invoice_views.xml',          # new added
         'views/hill_invoice_views.xml',                 # new added
         'views/invoice_generation_wizard_views.xml',    # new added
