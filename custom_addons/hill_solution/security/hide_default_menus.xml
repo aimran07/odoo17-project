@@ -14,6 +14,12 @@
             eval="[(6, 0, [ref('hill_solution.hill_case_manager')])]"/>
     </record>
 
+    <!-- Link Tracker menu visible only to Hill Managers -->
+    <record id="utm.menu_link_tracker_root" model="ir.ui.menu">
+        <field name="groups_id"
+            eval="[(6, 0, [ref('hill_solution.hill_case_manager')])]"/>
+    </record>
+
     <!-- Apps menu visible only to Hill Managers -->
     <record id="base.menu_management" model="ir.ui.menu">
         <field name="groups_id"
