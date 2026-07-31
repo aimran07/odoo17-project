@@ -57,6 +57,11 @@ access_hill_payment_register_wizard_agent,hill.payment.register.wizard.agent,mod
 access_hill_payment_register_wizard_manager,hill.payment.register.wizard.manager,model_hill_payment_register_wizard,hill_solution.hill_case_manager,1,1,1,1
 access_hill_payment_register_wizard_technician,hill.payment.register.wizard.technician,model_hill_payment_register_wizard,hill_solution.hill_case_technician,1,1,1,1
 
+access_hill_visit_wizard_user,hill.visit.wizard.user,model_hill_visit_wizard,hill_solution.hill_case_group,1,1,1,1
+access_hill_visit_wizard_agent,hill.visit.wizard.agent,model_hill_visit_wizard,hill_solution.hill_case_agent,1,1,1,1
+access_hill_visit_wizard_manager,hill.visit.wizard.manager,model_hill_visit_wizard,hill_solution.hill_case_manager,1,1,1,1
+access_hill_visit_wizard_technician,hill.visit.wizard.technician,model_hill_visit_wizard,hill_solution.hill_case_technician,1,1,1,1
+
 access_hill_invoice_user,hill.invoice.user,model_hill_invoice,hill_solution.hill_case_group,1,1,1,1
 access_hill_invoice_agent,hill.invoice.agent,model_hill_invoice,hill_solution.hill_case_agent,1,0,0,0
 access_hill_invoice_manager,hill.invoice.manager,model_hill_invoice,hill_solution.hill_case_manager,1,1,1,1

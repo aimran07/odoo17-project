@@ -9,6 +9,7 @@
                 <field name="case_number" />
                 <field name="name" />
                 <field name="client_type" widget="badge" />
+                <field name="service_type" widget="badge" />
                 <field name="validated_badge" widget="badge" />
                 <field name="stage_id" widget="badge" />
                 <field name="sub_status" widget="badge" />
@@ -139,7 +140,7 @@
                             <field name="residential_address" />
                         </group>
                     </group>
-                    <group string="Technical Visit" invisible="not is_visit_required">
+                    <group string="Technical Visit" >
                         <group>
                             <field name="visit_date" widget="visit_date_widget" readonly="not user_is_manager" />
                             <field name="visit_duration" readonly="not user_is_manager" />

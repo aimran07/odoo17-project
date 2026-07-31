@@ -1,6 +1,5 @@
 from odoo import models, fields
 
-
 class HillPayment(models.Model):
     _name = 'hill.payment'
     _description = 'Hill Payment'
