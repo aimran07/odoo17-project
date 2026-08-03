@@ -24,7 +24,8 @@ class InvoiceGenerationWizardLine(models.TransientModel):
         readonly=True,
     )
 
-    service_type = fields.Selection(
+    service_type = fields.Many2one(
+        "hill.service.type",
         related="case_id.service_type",
         readonly=True,
     )

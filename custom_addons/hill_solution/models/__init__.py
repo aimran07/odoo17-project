@@ -1,5 +1,6 @@
 from . import hill_case
 from . import hill_case_stage
+from . import hill_service_type
 from . import site_report_stage
 from . import site_report
 from . import hill_site_document

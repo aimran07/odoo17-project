@@ -55,15 +55,8 @@ class SiteReport(models.Model):
         string='Client Type',
         tracking=True,
     )
-    service_type = fields.Selection(
-        [('ndd_heat_destratifier', 'NDD Heat destratifier'),
-         ('led_study', 'LED study'),
-         ('study_163', 'Study 163'),
-         ('regulatory_audit', 'Regulatory audit'),
-         ('sizing_171', 'Sizing 171'),
-         ('study_174', 'Study 174'),
-         ('study_175', 'Study 175'),
-         ('study_179', 'Study 179')],
+    service_type = fields.Many2one(
+        'hill.service.type',
         string='Service Type',
         tracking=True,
     )
@@ -104,6 +97,10 @@ class SiteReport(models.Model):
         'hill.site.document',
         'site_report_id',
         string='Documents',
+    )
+    is_report_saved = fields.Boolean(
+        string='Report Saved',
+        default=False,
     )
     photo_ids = fields.One2many(
         'hill.site.photo',
@@ -177,6 +174,18 @@ class SiteReport(models.Model):
     def action_propagate_site_fields(self):
         self.ensure_one()
 
+        if not self.is_report_saved:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': _('Warning'),
+                    'message': _('Report is not generated'),
+                    'type': 'warning',
+                    'sticky': False,
+                },
+            }
+
         if not self.photo_ids:
             raise UserError(_('Please upload at least one photo before submitting.'))
         if not self.document_ids:
@@ -212,17 +221,10 @@ class SiteReport(models.Model):
 
     def action_generate_site_report(self):
         self.ensure_one()
-
-        return {
-            'type': 'ir.actions.act_window',
-            'name': _('Visit Report Preview'),
-            'res_model': 'site.report.wizard',
-            'view_mode': 'form',
-            'target': 'new',
-            'context': {
-                'default_site_report_id': self.id,
-            },
-        }
+        wizard = self.env['site.report.wizard'].create({
+            'site_report_id': self.id,
+        })
+        return wizard.action_open_preview()
 
     def action_save_site_report(self, pdf_data, filename):
         self.ensure_one()

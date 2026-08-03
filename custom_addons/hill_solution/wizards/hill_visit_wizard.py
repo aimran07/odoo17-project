@@ -27,17 +27,10 @@ class HillVisitWizard(models.TransientModel):
         readonly=True,
     )
 
-    @api.depends('case_id.service_type')
+    @api.depends('case_id.service_type.name')
     def _compute_service_type(self):
         for wizard in self:
-            service_type = wizard.case_id.service_type
-            if not service_type:
-                wizard.service_type = ''
-                continue
-            selection = dict(
-                wizard.case_id._fields['service_type'].selection
-            )
-            wizard.service_type = selection.get(service_type, service_type)
+            wizard.service_type = wizard.case_id.service_type.name or ''
 
     company_name = fields.Char(
         related='case_id.company_name',
@@ -126,7 +119,7 @@ class HillVisitWizard(models.TransientModel):
             'technician_name': self.technician_name.id,
             'stage_id': default_stage.id if default_stage else False,
             'client_type': case.client_type,
-            'service_type': case.service_type,
+            'service_type': case.service_type.id,
             'is_visit_required': case.is_visit_required,
             'company_name': case.company_name,
             'contact_firstname': case.contact_firstname,
