@@ -107,6 +107,7 @@
                             <field name="service_type" />
                             <field name="is_visit_required" invisible="1" />
                             <field name="date_deadline" />
+                            <field name="requires_advance_payment" readonly="1" />
                         </group>
                         <group string="Assignment">
                             <field name="agent_name" widget="many2one_avatar_user" />

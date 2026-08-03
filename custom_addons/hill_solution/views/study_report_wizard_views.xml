@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_site_report_wizard_form" model="ir.ui.view">
-        <field name="name">site.report.wizard.form</field>
-        <field name="model">site.report.wizard</field>
+    <record id="view_study_report_wizard_form" model="ir.ui.view">
+        <field name="name">study.report.wizard.form</field>
+        <field name="model">study.report.wizard</field>
         <field name="arch" type="xml">
-            <form string="Visit Report Preview" class="o_report_preview_wizard">
-                <field name="state" invisible="1"/>
+            <form string="Study Report Preview" class="o_report_preview_wizard">
                 <field name="preview_url" invisible="1"/>
                 <field name="attachment_id" invisible="1"/>
-                <field name="site_report_id" invisible="1"/>
+                <field name="study_id" invisible="1"/>
 
                 <sheet>
                     <div class="o_report_preview_frame">

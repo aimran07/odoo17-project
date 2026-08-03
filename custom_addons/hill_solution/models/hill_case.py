@@ -43,15 +43,8 @@ class HillCase(models.Model):
         [('b2b', 'B2B'), ('b2c', 'B2C')],
         string='Client Type', required=True, tracking=True,
     )
-    service_type = fields.Selection(
-        [('ndd_heat_destratifier', 'NDD Heat destratifier'),
-         ('led_study', 'LED study'),
-         ('study_163', 'Study 163'),
-         ('regulatory_audit', 'Regulatory audit'),
-         ('sizing_171', 'Sizing 171'),
-         ('study_174', 'Study 174'),
-         ('study_175', 'Study 175'),
-         ('study_179', 'Study 179')],
+    service_type = fields.Many2one(
+        'hill.service.type',
         string='Service Type',
         tracking=True,
     )
@@ -71,6 +64,11 @@ class HillCase(models.Model):
         'res.partner',
         string='Client',
         tracking=True,
+    )
+    requires_advance_payment = fields.Boolean(
+        related='partner_id.hill_requires_advance_payment',
+        string='Requires Advance Payment',
+        readonly=True,
     )
     date_deadline = fields.Date(string='Deadline', tracking=True)
     agent_name = fields.Many2one(

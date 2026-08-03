@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hill_res_partner_manager,res.partner.manager,base.model_res_partner,hill_solution.hill_case_manager,1,1,0,0
 access_hill_case_user,hill.case.user,model_hill_case,hill_solution.hill_case_group,1,1,1,1
 access_hill_case_agent,hill.case.agent,model_hill_case,hill_solution.hill_case_agent,1,1,1,1
 access_hill_case_manager,hill.case.manager,model_hill_case,hill_solution.hill_case_manager,1,1,1,1
@@ -8,6 +9,12 @@ access_hill_case_stage_user,hill.case.stage.user,model_hill_case_stage,hill_solu
 access_hill_case_stage_agent,hill.case.stage.agent,model_hill_case_stage,hill_solution.hill_case_agent,1,1,1,1
 access_hill_case_stage_manager,hill.case.stage.manager,model_hill_case_stage,hill_solution.hill_case_manager,1,1,1,1
 access_hill_case_stage_technician,hill.case.stage.technician,model_hill_case_stage,hill_solution.hill_case_technician,1,0,0,0
+
+access_hill_service_type_user,hill.service.type.user,model_hill_service_type,hill_solution.hill_case_group,1,0,0,0
+access_hill_service_type_agent,hill.service.type.agent,model_hill_service_type,hill_solution.hill_case_agent,1,0,0,0
+access_hill_service_type_manager,hill.service.type.manager,model_hill_service_type,hill_solution.hill_case_manager,1,1,1,1
+access_hill_service_type_technician,hill.service.type.technician,model_hill_service_type,hill_solution.hill_case_technician,1,0,0,0
+access_hill_service_type_portal,hill.service.type.portal,model_hill_service_type,base.group_portal,1,0,0,0
 
 access_site_report_user,site.report.user,model_site_report,hill_solution.hill_case_group,1,1,1,1
 access_site_report_agent,site.report.agent,model_site_report,hill_solution.hill_case_agent,1,0,0,0
@@ -46,6 +53,11 @@ access_site_report_wizard_user,site.report.wizard.user,model_site_report_wizard,
 access_site_report_wizard_agent,site.report.wizard.agent,model_site_report_wizard,hill_solution.hill_case_agent,1,0,0,0
 access_site_report_wizard_manager,site.report.wizard.manager,model_site_report_wizard,hill_solution.hill_case_manager,1,1,1,1
 access_site_report_wizard_technician,site.report.wizard.technician,model_site_report_wizard,hill_solution.hill_case_technician,1,1,1,1
+
+access_study_report_wizard_user,study.report.wizard.user,model_study_report_wizard,hill_solution.hill_case_group,1,1,1,1
+access_study_report_wizard_agent,study.report.wizard.agent,model_study_report_wizard,hill_solution.hill_case_agent,1,0,0,0
+access_study_report_wizard_manager,study.report.wizard.manager,model_study_report_wizard,hill_solution.hill_case_manager,1,1,1,1
+access_study_report_wizard_technician,study.report.wizard.technician,model_study_report_wizard,hill_solution.hill_case_technician,1,1,1,1
 
 access_hill_payment_user,hill.payment.user,model_hill_payment,hill_solution.hill_case_group,1,1,1,1
 access_hill_payment_agent,hill.payment.agent,model_hill_payment,hill_solution.hill_case_agent,1,0,0,0

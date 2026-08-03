@@ -23,6 +23,12 @@ class HillCasePortal(CustomerPortal):
         partner = request.env.user.partner_id
         return [('partner_id', '=', partner.id)]
 
+    def _get_service_types(self, client_type):
+        return request.env['hill.service.type'].sudo().search([
+            ('client_type', '=', client_type),
+            ('active', '=', True),
+        ])
+
     def _get_invoice_domain(self):
         partner = request.env.user.partner_id
         return [
@@ -318,6 +324,7 @@ class HillCasePortal(CustomerPortal):
             'post': {},
             'client_type': partner.hill_client_type,
             'partner': partner,
+            'service_types': self._get_service_types(partner.hill_client_type),
         })
 
     # ── Case form submit ──────────────────────────────────────────────────────
@@ -356,12 +363,13 @@ class HillCasePortal(CustomerPortal):
                 'post': post,
                 'client_type': client_type,
                 'partner': partner,
+                'service_types': self._get_service_types(client_type),
             })
 
         vals = {
             'client_type': client_type,
             'partner_id': partner.id,
-            'service_type': post.get('service_type') or False,
+            'service_type': int(post.get('service_type') or 0) or False,
         }
 
         if client_type == 'b2b':
