@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- List View -->
     <record id="view_hill_service_type_tree" model="ir.ui.view">
         <field name="name">hill.service.type.list</field>
         <field name="model">hill.service.type</field>
@@ -8,12 +9,13 @@
                 <field name="name" />
                 <field name="code" />
                 <field name="client_type" widget="badge" />
-                <field name="sequence" />
+                <!-- <field name="sequence" /> -->
                 <field name="active" />
             </tree>
         </field>
     </record>
 
+    <!-- Form View -->
     <record id="view_hill_service_type_form" model="ir.ui.view">
         <field name="name">hill.service.type.form</field>
         <field name="model">hill.service.type</field>
