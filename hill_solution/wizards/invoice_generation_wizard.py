@@ -49,7 +49,7 @@ class InvoiceGenerationWizard(models.TransientModel):
                 (0, 0, {
                     "case_id": line.case_id.id,
                     "case_number": line.case_number,
-                    "service_type": line.case_id.service_type,
+                    "service_type": line.case_id.service_type.id,
                     "amount": line.amount,
                 })
                 for line in selected_lines

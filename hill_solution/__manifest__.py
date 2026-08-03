@@ -1,6 +1,6 @@
 {
     'name': 'Hill Solution',
-    'version': '17.0.1.2.0',
+    'version': '17.0.1.3.0',
     'category': 'Services',
     'summary': 'Manage service cases with kanban and tree views',
     'description': """
@@ -22,14 +22,19 @@ Features:
         'data/ir_sequence_data.xml',
         'data/invoice_sequence.xml',                    # new added
         'data/hill_case_stage_data.xml',
+        'data/hill_service_type_data.xml',
         'data/site_report_stage_data.xml',
         'data/hill_study_stage_data.xml',
         'views/hill_case_views.xml',
+        'views/hill_service_type_views.xml',
         'views/site_report_views.xml',
         'views/site_report_wizard_views.xml',
+        'views/study_report_wizard_views.xml',
         'views/hill_study_views.xml',
         'views/hill_payment_register_wizard_views.xml',
+        'views/hill_visit_wizard_views.xml',
         'views/res_partner_invoice_views.xml',          # new added
+        'views/res_partner_manage_clients_views.xml',   # new added
         'views/hill_invoice_views.xml',                 # new added
         'views/invoice_generation_wizard_views.xml',    # new added
         'report/invoice_report.xml',                    # new added

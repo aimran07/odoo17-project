@@ -28,6 +28,7 @@ export class HillPhotoWidget extends Component {
             showWebcam: false,
             webcamStream: null,
             pendingCapture: null,
+            geolocation: null,
         });
 
         onMounted(() => {
@@ -149,6 +150,7 @@ export class HillPhotoWidget extends Component {
 
     async _openWebcamModal() {
         if (this.props.readonly) return;
+        this._requestGeolocation();
         if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
             this.notification.add(_t("Camera is not supported on this device."), { type: "warning" });
             return;
@@ -200,6 +202,25 @@ export class HillPhotoWidget extends Component {
         }, "image/jpeg", 0.9);
     }
 
+    _requestGeolocation() {
+        if (!navigator.geolocation) {
+            this.state.geolocation = null;
+            return;
+        }
+        navigator.geolocation.getCurrentPosition(
+            (pos) => {
+                this.state.geolocation = {
+                    lat: pos.coords.latitude,
+                    lon: pos.coords.longitude,
+                };
+            },
+            () => {
+                this.state.geolocation = null;
+            },
+            { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+        );
+    }
+
     async confirmCapture() {
         if (!this.state.pendingCapture) return;
         const file = new File(
@@ -208,7 +229,7 @@ export class HillPhotoWidget extends Component {
             { type: "image/jpeg" }
         );
         this.state.pendingCapture = null;
-        await this._processFiles([file]);
+        await this._processFiles([file], true);
     }
 
     retakeCapture() {
@@ -222,7 +243,7 @@ export class HillPhotoWidget extends Component {
         ev.target.value = "";
     }
 
-    async _processFiles(files) {
+    async _processFiles(files, isWebcam = false) {
         if (this.props.readonly) return;
 
         const recordId = this.props.record?.resId;
@@ -255,10 +276,18 @@ export class HillPhotoWidget extends Component {
                 }]);
 
                 const attachmentId = result[0];
-                await this.orm.create("hill.site.photo", [{
+                const photoVals = {
                     site_report_id: recordId,
                     attachment_id: attachmentId,
-                }]);
+                };
+                if (isWebcam) {
+                    photoVals.is_webcam_capture = true;
+                    if (this.state.geolocation) {
+                        photoVals.geo_latitude = this.state.geolocation.lat;
+                        photoVals.geo_longitude = this.state.geolocation.lon;
+                    }
+                }
+                await this.orm.create("hill.site.photo", [photoVals]);
 
                 successCount++;
                 this.state.queue[i].status = "done";

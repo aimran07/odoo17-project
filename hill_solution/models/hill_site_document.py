@@ -15,6 +15,11 @@ class HillSiteDocument(models.Model):
         string='Case',
         ondelete='cascade',
     )
+    study_id = fields.Many2one(
+        'hill.study',
+        string='Study',
+        ondelete='cascade',
+    )
     attachment_id = fields.Many2one(
         'ir.attachment',
         string='File',

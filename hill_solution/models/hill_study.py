@@ -127,6 +127,16 @@ class HillStudy(models.Model):
     study_notes = fields.Html(string='Study Notes')
     study_data = fields.Text(string='Study Input Data')
 
+    document_ids = fields.One2many(
+        'hill.site.document',
+        'study_id',
+        string='Reports',
+    )
+    study_report_saved = fields.Boolean(
+        string='Study Report Saved',
+        default=False,
+    )
+
     @api.model
     def _read_group_stage_ids(self, stages, domain, order):
         return self.env['hill.study.stage'].search([], order='sequence')
@@ -202,3 +212,10 @@ class HillStudy(models.Model):
             self.case_id.write({
                 'study_status': 'in_progress',
         })
+
+    def action_generate_study_report(self):
+        self.ensure_one()
+        wizard = self.env['study.report.wizard'].create({
+            'study_id': self.id,
+        })
+        return wizard.action_open_preview()

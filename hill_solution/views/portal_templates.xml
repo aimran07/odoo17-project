@@ -261,21 +261,14 @@
                                             <input type="tel" name="b2b_phone" class="form-control" t-att-value="partner.hill_b2b_phone or ''"/>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label class="col-form-label">Service Type</label>
+                                             <label class="col-form-label">Service Type</label>
                                              <select name="service_type" class="form-select">
                                                  <option value="">-- Select --</option>
-                                                 <option value="ndd_heat_destratifier" t-att-selected="post.get('service_type') == 'ndd_heat_destratifier' or None">
-                                                     NDD Heat destratifier
-                                                 </option>
-                                                 <option value="led_study" t-att-selected="post.get('service_type') == 'led_study' or None">
-                                                     LED study
-                                                 </option>
-                                                 <option value="study_163" t-att-selected="post.get('service_type') == 'study_163' or None">
-                                                     Study 163
-                                                 </option>
-                                                 <option value="regulatory_audit" t-att-selected="post.get('service_type') == 'regulatory_audit' or None">
-                                                     Regulatory audit
-                                                 </option>
+                                                 <t t-foreach="service_types" t-as="st">
+                                                     <option t-att-value="st.id" t-att-selected="post.get('service_type') == str(st.id) or None">
+                                                         <t t-esc="st.name"/>
+                                                     </option>
+                                                 </t>
                                              </select>
                                          </div>
                                      </div>
@@ -333,10 +326,11 @@
                                              <label class="col-form-label">Service Type</label>
                                              <select name="service_type" class="form-select">
                                                  <option value="">-- Select --</option>
-                                                 <option value="sizing_171" t-att-selected="post.get('service_type') == 'sizing_171' or None">Sizing 171</option>
-                                                 <option value="study_174" t-att-selected="post.get('service_type') == 'study_174' or None">Study 174</option>
-                                                 <option value="study_175" t-att-selected="post.get('service_type') == 'study_175' or None">Study 175</option>
-                                                 <option value="study_179" t-att-selected="post.get('service_type') == 'study_179' or None">Study 179</option>
+                                                 <t t-foreach="service_types" t-as="st">
+                                                     <option t-att-value="st.id" t-att-selected="post.get('service_type') == str(st.id) or None">
+                                                         <t t-esc="st.name"/>
+                                                     </option>
+                                                 </t>
                                              </select>
                                          </div>
                                      </div>
@@ -413,6 +407,7 @@
                             <div class="mb-3">
                                 <span t-if="case.client_type == 'b2b'" class="badge bg-primary me-2">B2B</span>
                                 <span t-if="case.client_type == 'b2c'" class="badge bg-success me-2">B2C</span>
+                                <span t-if="case.requires_advance_payment" class="badge bg-warning text-dark me-2">Requires Advance Payment</span>
                                 <small class="text-muted">
                                     Submitted on
                                     <t t-esc="case.create_date" t-options='{"widget": "date"}'/>
@@ -482,7 +477,7 @@
                                 </div>
                                 <div class="col-md-6 mb-2">
                                     <strong>Service Type:</strong>
-                                    <t t-esc="dict(case._fields['service_type'].selection).get(case.service_type, '-')"/>
+                                    <t t-esc="case.service_type.name or '-'"/>
                                 </div>
                             </div>
 
@@ -701,7 +696,7 @@ Back to My Cases
                                             <tr>
                                                 <td><t t-esc="line.case_number or '-'"/></td>
                                                 <td>
-                                                    <t t-esc="dict(line._fields['service_type'].selection).get(line.service_type, '-')"/>
+                                                    <t t-esc="line.service_type.name or '-'"/>
                                                 </td>
                                                 <td class="text-end">
                                                     <t t-esc="line.amount" t-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>

@@ -28,6 +28,7 @@
                     <field name="is_to_process" invisible="1" />
                     <field name="is_in_progress" invisible="1" />
                     <field name="is_to_modify" invisible="1" />
+                    <field name="study_report_saved" invisible="1" />
                     <!-- <field name="is_visit" invisible="1" />
                     <field name="is_new_case" invisible="1" /> -->
                     <!-- <field name="can_create_study" invisible="1" /> -->
@@ -42,6 +43,9 @@
                     <button name="action_start_study" string="Start Study"
                             type="object" class="oe_highlight"
                             invisible="not is_to_process" />
+                    <button name="action_generate_study_report" string="Generate Study Report"
+                            type="object" class="oe_highlight"
+                            invisible="not is_in_progress or study_report_saved" />
                     <button name="action_study_complete" string="Study Complete"
                             type="object" class="oe_highlight"
                             invisible="not is_in_progress" />
@@ -140,6 +144,9 @@
                             <group string="Visit Notes">
                                 <field name="visit_notes" nolabel="1" readonly="1" />
                             </group>
+                        </page>
+                        <page string="Study Report" name="study_report">
+                            <field name="document_ids" widget="hill_document_widget" readonly="1" />
                         </page>
                         <!-- <page string="Associated Documents" name="case_documents">
                             <field name="document_ids" widget="hill_document_widget" readonly="1" />

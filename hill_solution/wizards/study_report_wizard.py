@@ -6,25 +6,24 @@ from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
 
-class SiteReportWizard(models.TransientModel):
-    _name = 'site.report.wizard'
-    _description = 'Visit Report Preview Wizard'
+class StudyReportWizard(models.TransientModel):
+    _name = 'study.report.wizard'
+    _description = 'Study Report Preview Wizard'
 
-    site_report_id = fields.Many2one('site.report', string='Site Report', required=True)
-    state = fields.Selection([('form', 'Form'), ('preview', 'Preview')], default='form')
+    study_id = fields.Many2one('hill.study', string='Study', required=True)
     preview_url = fields.Char('Preview URL')
     preview_html = fields.Html('Preview', sanitize=False, sanitize_attributes=False)
     attachment_id = fields.Many2one('ir.attachment', string='Generated Report')
 
     def action_open_preview(self):
         self.ensure_one()
-        report = self.site_report_id
-        pdf_data = self._generate_pdf(report)
+        study = self.study_id
+        pdf_data = self._generate_pdf(study)
         attachment = self.env['ir.attachment'].create({
-            'name': 'visit_report_%s.pdf' % report.id,
+            'name': 'study_report_%s.pdf' % study.id,
             'datas': base64.b64encode(pdf_data),
             'mimetype': 'application/pdf',
-            'res_model': 'site.report.wizard',
+            'res_model': 'study.report.wizard',
             'res_id': self.id,
         })
         preview_url = '/web/content/%s?download=false' % attachment.id
@@ -36,14 +35,13 @@ class SiteReportWizard(models.TransientModel):
     </iframe>
 </div>''' % preview_url
         self.write({
-            'state': 'preview',
             'preview_url': preview_url,
             'preview_html': preview_html,
             'attachment_id': attachment.id,
         })
         return {
             'type': 'ir.actions.act_window',
-            'res_model': 'site.report.wizard',
+            'res_model': 'study.report.wizard',
             'res_id': self.id,
             'view_mode': 'form',
             'target': 'new',
@@ -52,43 +50,34 @@ class SiteReportWizard(models.TransientModel):
 
     def action_save_report(self):
         self.ensure_one()
-        report = self.site_report_id
+        study = self.study_id
         if not self.attachment_id:
             raise UserError(_('Please open the preview first.'))
         attachment = self.attachment_id
         attachment.write({
-            'res_model': 'site.report',
-            'res_id': report.id,
+            'res_model': 'hill.study',
+            'res_id': study.id,
         })
         self.env['hill.site.document'].create({
-            'site_report_id': report.id,
+            'study_id': study.id,
+            'case_id': study.case_id.id,
             'attachment_id': attachment.id,
         })
+        study.study_report_saved = True
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',
             'params': {
                 'title': _('Success'),
-                'message': _('Report saved to documents.'),
+                'message': _('Study report saved to documents.'),
                 'type': 'success',
                 'sticky': False,
+                'next': {'type': 'ir.actions.act_window_close'},
             },
         }
 
-    def action_back(self):
-        self.ensure_one()
-        self.state = 'form'
-        return {
-            'type': 'ir.actions.act_window',
-            'res_model': 'site.report.wizard',
-            'res_id': self.id,
-            'view_mode': 'form',
-            'target': 'new',
-            'context': self.env.context,
-        }
-
-    def _generate_pdf(self, report):
-        html = self._render_report_html(report)
+    def _generate_pdf(self, study):
+        html = self._render_report_html(study)
         with tempfile.NamedTemporaryFile(suffix='.html', delete=False, mode='w', encoding='utf-8') as f:
             f.write(html)
             html_path = f.name
@@ -111,16 +100,14 @@ class SiteReportWizard(models.TransientModel):
             if os.path.exists(pdf_path):
                 os.unlink(pdf_path)
 
-    def _render_report_html(self, report):
-        report.ensure_one()
+    def _render_report_html(self, study):
+        study.ensure_one()
         partner = ''
-        if report.client_type == 'b2b':
-            partner = (
-                report.company_name or ''
-            )
-        elif report.client_type == 'b2c':
-            first = report.beneficiary_firstname or ''
-            last = report.beneficiary_lastname or ''
+        if study.client_type == 'b2b':
+            partner = study.company_name or ''
+        elif study.client_type == 'b2c':
+            first = study.beneficiary_firstname or ''
+            last = study.beneficiary_lastname or ''
             partner = ('%s %s' % (first, last)).strip()
 
         return '''
@@ -144,17 +131,17 @@ class SiteReportWizard(models.TransientModel):
 </head>
 <body>
     <div class="header">
-        <h1>%(visit_report_label)s</h1>
-        <p>%(report_name)s</p>
+        <h1>%(study_report_label)s</h1>
+        <p>%(study_name)s</p>
     </div>
 
     <div class="section">
-        <h2>%(case_info_label)s</h2>
+        <h2>%(study_info_label)s</h2>
         <table>
+            <tr><td class="label">%(study_title_label)s</td><td class="value">%(study_name)s</td></tr>
             <tr><td class="label">%(case_number_label)s</td><td class="value">%(case_number)s</td></tr>
-            <tr><td class="label">%(technician_label)s</td><td class="value">%(technician)s</td></tr>
-            <tr><td class="label">%(visit_date_label)s</td><td class="value">%(visit_date)s</td></tr>
-            <tr><td class="label">%(service_type_label)s</td><td class="value">%(service_type)s</td></tr>
+            <tr><td class="label">%(study_nature_label)s</td><td class="value">%(study_nature)s</td></tr>
+            <tr><td class="label">%(study_status_label)s</td><td class="value">%(study_status)s</td></tr>
             <tr><td class="label">%(client_type_label)s</td><td class="value">%(client_type)s</td></tr>
         </table>
     </div>
@@ -180,43 +167,55 @@ class SiteReportWizard(models.TransientModel):
     </div>
 
     <div class="section">
-        <h2>%(visit_notes_label)s</h2>
-        <div class="notes">%(visit_notes)s</div>
+        <h2>%(study_data_label)s</h2>
+        <div class="notes">%(study_data)s</div>
+    </div>
+
+    <div class="section">
+        <h2>%(study_notes_label)s</h2>
+        <div class="notes">%(study_notes)s</div>
     </div>
 </body>
 </html>
 ''' % {
-            'visit_report_label': _('Visit Report'),
-            'report_name': report.name or '',
-            'case_info_label': _('Case Information'),
+            'study_report_label': _('Study Report'),
+            'study_name': study.name or '',
+            'study_info_label': _('Study Information'),
+            'study_title_label': _('Study Title'),
             'case_number_label': _('Case Number'),
-            'case_number': report.case_number or '',
-            'technician_label': _('Technician'),
-            'technician': report.technician_name.name if report.technician_name else '',
-            'visit_date_label': _('Visit Date'),
-            'visit_date': str(report.visit_date) if report.visit_date else '',
-            'service_type_label': _('Service Type'),
-            'service_type': dict(report._fields['service_type'].selection).get(report.service_type, report.service_type or ''),
+            'case_number': study.case_number or '',
+            'study_nature_label': _('Study Nature'),
+            'study_nature': dict(study._fields['study_nature'].selection).get(
+                study.study_nature, study.study_nature or ''
+            ),
+            'study_status_label': _('Study Status'),
+            'study_status': dict(study._fields['study_status'].selection).get(
+                study.study_status, study.study_status or ''
+            ),
             'client_type_label': _('Client Type'),
-            'client_type': dict(report._fields['client_type'].selection).get(report.client_type, report.client_type or ''),
+            'client_type': dict(study._fields['client_type'].selection).get(
+                study.client_type, study.client_type or ''
+            ),
             'client_info_label': _('Client Information'),
-            'client_label': _('Company') if report.client_type == 'b2b' else _('Beneficiary'),
+            'client_label': _('Company') if study.client_type == 'b2b' else _('Beneficiary'),
             'partner': partner,
             'site_data_label': _('Site Data'),
             'length_label': _('Length'),
-            'length': report.length or '',
+            'length': study.length or '',
             'breadth_label': _('Breadth'),
-            'breadth': report.breadth or '',
+            'breadth': study.breadth or '',
             'height_label': _('Height'),
-            'height': report.height or '',
+            'height': study.height or '',
             'area_label': _('Area'),
-            'area': report.area or '',
+            'area': study.area or '',
             'volume_label': _('Volume'),
-            'volume': report.volume or '',
+            'volume': study.volume or '',
             'temperature_label': _('Temperature'),
-            'temperature': report.temperature or '',
+            'temperature': study.temperature or '',
             'pressure_label': _('Pressure'),
-            'pressure': report.pressure or '',
-            'visit_notes_label': _('Visit Notes'),
-            'visit_notes': report.visit_notes or '',
+            'pressure': study.pressure or '',
+            'study_data_label': _('Study Input Data'),
+            'study_data': study.study_data or '',
+            'study_notes_label': _('Study Notes'),
+            'study_notes': study.study_notes or '',
         }

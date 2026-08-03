@@ -32,12 +32,13 @@
                     <field name="is_to_visit" invisible="1"/>
                     <field name="is_requested" invisible="1"/>
                     <field name="is_rejected" invisible="1"/>
+                    <field name="is_report_saved" invisible="1"/>
 
                     <button name="action_generate_site_report"
                             string="Generate Visit Report"
                             type="object"
                             class="oe_highlight"
-                            invisible="not is_to_visit"/>
+                            invisible="not is_to_visit or is_report_saved"/>
                     <button name="action_propagate_site_fields"
                             string="Request for Approval"
                             type="object"

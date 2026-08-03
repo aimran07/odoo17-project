@@ -27,6 +27,10 @@ class ResPartner(models.Model):
         string='Beneficiary Status',
     )
 
+    hill_requires_advance_payment = fields.Boolean(
+        string='Requires Advance Payment',
+    )
+
 
     invoice_case_count = fields.Integer(
         string="Open Cases",

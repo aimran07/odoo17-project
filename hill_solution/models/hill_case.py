@@ -43,15 +43,8 @@ class HillCase(models.Model):
         [('b2b', 'B2B'), ('b2c', 'B2C')],
         string='Client Type', required=True, tracking=True,
     )
-    service_type = fields.Selection(
-        [('ndd_heat_destratifier', 'NDD Heat destratifier'),
-         ('led_study', 'LED study'),
-         ('study_163', 'Study 163'),
-         ('regulatory_audit', 'Regulatory audit'),
-         ('sizing_171', 'Sizing 171'),
-         ('study_174', 'Study 174'),
-         ('study_175', 'Study 175'),
-         ('study_179', 'Study 179')],
+    service_type = fields.Many2one(
+        'hill.service.type',
         string='Service Type',
         tracking=True,
     )
@@ -71,6 +64,11 @@ class HillCase(models.Model):
         'res.partner',
         string='Client',
         tracking=True,
+    )
+    requires_advance_payment = fields.Boolean(
+        related='partner_id.hill_requires_advance_payment',
+        string='Requires Advance Payment',
+        readonly=True,
     )
     date_deadline = fields.Date(string='Deadline', tracking=True)
     agent_name = fields.Many2one(
@@ -278,21 +276,6 @@ class HillCase(models.Model):
     def action_create_visit_from_case(self):
         self.ensure_one()
 
-        # if not self.technician_name:
-        #     raise ValidationError(_("Please select a Technician before creating the site visit."))
-
-        if not self.technician_name:
-            return {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': _('Validation Error'),
-                    'message': _('Please select a Technician before creating the site visit.'),
-                    'type': 'danger',   # or 'warning'
-                    'sticky': False,
-                }
-            }
-
         if self.site_report_ids:
             return {
                 'type': 'ir.actions.client',
@@ -305,49 +288,14 @@ class HillCase(models.Model):
                 }
             }
 
-        default_stage = self.env.ref('hill_solution.stage_tovisit', raise_if_not_found=False)
-        visit_values = {
-            'case_id': self.id,
-            # 'name': _('%s - %s') % (self.case_number or 'Case', self.name or 'Site Visit'),
-            'name': self.name or _('Site Visit'),
-            'technician_name': self.technician_name.id if self.technician_name else False,
-            'stage_id': default_stage.id if default_stage else False,
-            'client_type': self.client_type,
-            'service_type': self.service_type,
-            'is_visit_required': self.is_visit_required,
-            'company_name': self.company_name,
-            'contact_firstname': self.contact_firstname,
-            'contact_lastname': self.contact_lastname,
-            'b2b_phone': self.b2b_phone,
-            'siret': self.siret,
-            'site_address': self.site_address or self.residential_address,
-            'beneficiary_firstname': self.beneficiary_firstname,
-            'beneficiary_lastname': self.beneficiary_lastname,
-            'beneficiary_phone': self.beneficiary_phone,
-            'beneficiary_status': self.beneficiary_status,
-            'residential_address': self.residential_address,
-            'visit_date': self.visit_date,
-            'visit_duration': self.visit_duration,
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('Create Site Visit'),
+            'res_model': 'hill.visit.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'default_case_id': self.id},
         }
-        visit = self.env['site.report'].create(visit_values)
-
-        visit_stage = self.env.ref(
-            'hill_solution.stage_visit',
-            raise_if_not_found=False,
-        )
-        if visit_stage:
-            self.stage_id = visit_stage.id
-
-        # return {
-        #     'type': 'ir.actions.client',
-        #     'tag': 'display_notification',
-        #     'params': {
-        #         'title': _('Success'),
-        #         'message': _('Site visit created successfully.'),
-        #         'type': 'success',
-        #         'sticky': False,
-        #     }
-        # }
 
     def action_validate_case(self):
         for rec in self:
