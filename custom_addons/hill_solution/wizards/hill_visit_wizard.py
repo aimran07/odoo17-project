@@ -1,3 +1,5 @@
+from markupsafe import Markup
+
 from odoo import models, fields, api, _
 
 
@@ -135,7 +137,30 @@ class HillVisitWizard(models.TransientModel):
             'visit_date': self.visit_date,
             # 'visit_duration': self.visit_duration,
         }
-        self.env['site.report'].create(visit_values)
+        visit = self.env['site.report'].create(visit_values)
+
+        if visit.technician_name.user_id:
+            visit.message_post(
+                body=Markup(_(
+                    """
+                    <b>New Site Visit Assigned</b><br/>
+                    Case: %s<br/>
+                    Client: %s<br/>
+                    Visit Date: %s
+                    """
+                )) % (
+                    visit.case_id.case_number,
+                    visit.company_name
+                    or visit.case_id.company_name
+                    or visit.case_id.partner_id.name
+                    or '',
+                    visit.visit_date,
+                ),
+                partner_ids=[
+                    visit.technician_name.user_id.partner_id.id
+                ],
+                message_type="notification",
+            )
 
         case.write({
             'technician_name': self.technician_name.id,
