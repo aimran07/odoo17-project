@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from odoo import models, fields, api, _
 
 
@@ -109,6 +111,7 @@ class ResPartner(models.Model):
             ("partner_id", "=", self.id),
             ("invoice_status", "=", "not_invoiced"),
             ("stage_id", "=", invoice_stage.id),
+            ("date_invoice_stage", ">=", fields.Date.today() - timedelta(days=30)),
         ]
 
         default_case_id = self.env.context.get('default_case_id')

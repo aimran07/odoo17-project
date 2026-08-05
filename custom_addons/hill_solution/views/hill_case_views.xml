@@ -45,7 +45,7 @@
                     <button name="action_validate_case" string="Validate"
                             type="object"
                             class="btn-warning"
-                            invisible="not is_new_case or is_validated" />
+                            invisible="not is_new_case or is_validated or (requires_advance_payment and not is_payment_status_paid)" />
 
                     <button name="action_create_visit_from_case" string="Create Visit"
                             type="object" class="oe_highlight"
@@ -82,7 +82,7 @@
                     <button name="action_register_payment" string="Register Payment"
                             type="object"
                             class="oe_highlight"
-                            invisible="not is_invoice_payment or is_payment_status_paid"
+                            invisible="not ((is_new_case and requires_advance_payment and not is_payment_status_paid) or (is_invoice_payment and not requires_advance_payment and not is_payment_status_paid))"
                             groups="hill_solution.hill_case_manager" />
                     <button name="action_create_invoice" string="Create Invoice"
                             type="object"
@@ -113,6 +113,7 @@
                             <field name="agent_name" widget="many2one_avatar_user" />
                             <field name="technician_name" widget="many2one_avatar_user" readonly="not user_is_manager" />
                             <field name="partner_id" readonly="1" />
+                            <!-- <field name="date_invoice_stage1" /> -->
                         </group>
                     </group>
                     <group string="Appointment">

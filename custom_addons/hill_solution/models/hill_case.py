@@ -98,6 +98,17 @@ class HillCase(models.Model):
             ('confirmed', 'Appointment Confirmed')],
         string='Appointment Status', default='to_contact', tracking=True,
     )
+    date_invoice_stage = fields.Date(
+        string='Date Entered Invoice Stage',
+        readonly=True,
+        copy=False,
+        tracking=True,
+    )
+    # date_invoice_stage1 = fields.Date(
+    #     string='Date Entered Invoice Stage',
+    #     copy=False,
+    #     tracking=True,
+    # )
     invoice_id = fields.Many2one(
         'hill.invoice',
         string='Invoice',
@@ -302,6 +313,9 @@ class HillCase(models.Model):
             if rec.is_validated:
                 raise UserError(_("This case has already been validated."))
 
+            if rec.requires_advance_payment and rec.payment_status != 'paid':
+                raise UserError(_("Advance payment must be registered before validating this case."))
+
             rec.is_validated = True
 
         for rec in self:
@@ -369,6 +383,7 @@ class HillCase(models.Model):
         if invoice_stage:
             self.write({
                 'stage_id': invoice_stage.id,
+                'date_invoice_stage': fields.Date.today(),
             })
 
         # return {
