@@ -65,6 +65,7 @@ class SiteReportWizard(models.TransientModel):
             'attachment_id': attachment.id,
         })
         report.is_report_saved = True
+        report._ensure_esign_document(attachment)
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',
@@ -77,8 +78,8 @@ class SiteReportWizard(models.TransientModel):
             },
         }
 
-    def _generate_pdf(self, report):
-        html = self._render_report_html(report)
+    def _generate_pdf(self, report, signature_image=None, signature_name=None):
+        html = self._render_report_html(report, signature_image=signature_image, signature_name=signature_name)
         with tempfile.NamedTemporaryFile(suffix='.html', delete=False, mode='w', encoding='utf-8') as f:
             f.write(html)
             html_path = f.name
@@ -101,7 +102,7 @@ class SiteReportWizard(models.TransientModel):
             if os.path.exists(pdf_path):
                 os.unlink(pdf_path)
 
-    def _render_report_html(self, report):
+    def _render_report_html(self, report, signature_image=None, signature_name=None):
         report.ensure_one()
         partner = ''
         if report.client_type == 'b2b':
@@ -112,6 +113,28 @@ class SiteReportWizard(models.TransientModel):
             first = report.beneficiary_firstname or ''
             last = report.beneficiary_lastname or ''
             partner = ('%s %s' % (first, last)).strip()
+
+        signature_block = ''
+        if signature_image and signature_name:
+            if isinstance(signature_image, bytes):
+                signature_image = signature_image.decode('utf-8')
+            signature_block = '''
+    <div class="section signature-section">
+        <h2>%(signature_label)s</h2>
+        <table>
+            <tr><td class="label">%(signature_name_label)s</td><td class="value">%(signature_name)s</td></tr>
+            <tr><td class="label">%(signature_date_label)s</td><td class="value">%(signature_date)s</td></tr>
+            <tr><td colspan="2"><img src="data:image/png;base64,%(signature_image)s" class="signature-image"/></td></tr>
+        </table>
+    </div>
+''' % {
+                'signature_label': _('Signature'),
+                'signature_name_label': _('Signed By'),
+                'signature_name': signature_name,
+                'signature_date_label': _('Date'),
+                'signature_date': str(fields.Date.today()),
+                'signature_image': signature_image,
+            }
 
         return '''
 <!DOCTYPE html>
@@ -130,6 +153,8 @@ class SiteReportWizard(models.TransientModel):
     .label { font-weight: bold; color: #555; width: 35%%; }
     .value { color: #333; }
     .notes { background: #f9f9f9; padding: 10px; border-radius: 4px; margin-top: 10px; }
+    .signature-section { margin-top: 40px; }
+    .signature-image { max-width: 250px; max-height: 100px; }
 </style>
 </head>
 <body>
@@ -173,6 +198,8 @@ class SiteReportWizard(models.TransientModel):
         <h2>%(visit_notes_label)s</h2>
         <div class="notes">%(visit_notes)s</div>
     </div>
+
+    %(signature_block)s
 </body>
 </html>
 ''' % {
@@ -209,4 +236,5 @@ class SiteReportWizard(models.TransientModel):
             'pressure': report.pressure or '',
             'visit_notes_label': _('Visit Notes'),
             'visit_notes': report.visit_notes or '',
+            'signature_block': signature_block,
         }

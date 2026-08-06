@@ -219,3 +219,22 @@ class HillStudy(models.Model):
             'study_id': self.id,
         })
         return wizard.action_open_preview()
+
+    def _ensure_esign_document(self, attachment):
+        self.ensure_one()
+        if not attachment:
+            return False
+        document = self.env['hill.document'].search([
+            ('doc_type', '=', 'study'),
+            ('study_id', '=', self.id),
+        ], limit=1)
+        vals = {
+            'doc_type': 'study',
+            'study_id': self.id,
+            'case_id': self.case_id.id,
+            'original_attachment_id': attachment.id,
+        }
+        if document:
+            document.write(vals)
+            return document
+        return self.env['hill.document'].create(vals)

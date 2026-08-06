@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hill_sign_wizard_form" model="ir.ui.view">
+        <field name="name">hill.sign.wizard.form</field>
+        <field name="model">hill.sign.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sign Document">
+                <sheet>
+                    <group>
+                        <field name="document_id" readonly="1" />
+                    </group>
+                    <group string="Signing Method">
+                        <field name="method" widget="radio" options="{'horizontal': True}" />
+                    </group>
+
+                    <group string="Draw Your Signature" invisible="method != 'draw'">
+                        <field name="draw_signature"
+                               widget="hill_sign_canvas"
+                               nolabel="1" />
+                    </group>
+
+                    <group string="Type Name" invisible="method != 'type'">
+                        <field name="typed_name"
+                               string="Type a name"
+                               placeholder="Start typing a name to see matching signatures" />
+                        <field name="suggested_signature_id"
+                               string="Suggested Signature"
+                               options="{'no_create': True, 'no_create_edit': True}" />
+                    </group>
+
+                    <group string="Upload Signature" invisible="method != 'upload'">
+                        <field name="uploaded_signature"
+                               widget="image"
+                               class="oe_avatar" />
+                        <field name="uploaded_filename" invisible="1" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_confirm"
+                            string="Sign Document"
+                            type="object"
+                            class="btn-primary" />
+                    <button string="Cancel" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

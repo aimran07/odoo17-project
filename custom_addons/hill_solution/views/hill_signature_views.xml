@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_hill_signature_tree" model="ir.ui.view">
+        <field name="name">hill.signature.tree</field>
+        <field name="model">hill.signature</field>
+        <field name="arch" type="xml">
+            <tree string="Signatures">
+                <field name="name" />
+                <field name="image" widget="image" class="oe_avatar" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_hill_signature_form" model="ir.ui.view">
+        <field name="name">hill.signature.form</field>
+        <field name="model">hill.signature</field>
+        <field name="arch" type="xml">
+            <form string="Signature">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="image" widget="image" class="oe_avatar" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_hill_signature" model="ir.actions.act_window">
+        <field name="name">Signatures</field>
+        <field name="res_model">hill.signature</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No signatures yet
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+    <t t-name="hill_solution.HillSignCanvas">
+        <div class="hill_sign_canvas_container" t-ref="root">
+            <canvas
+                t-ref="canvas"
+                class="hill_sign_canvas"
+                t-on-mousedown="onPointerDown"
+                t-on-mousemove="onPointerMove"
+                t-on-mouseup="onPointerUp"
+                t-on-mouseleave="onPointerUp"
+                t-on-touchstart="onPointerDown"
+                t-on-touchmove="onPointerMove"
+                t-on-touchend="onPointerUp"
+                t-att-width="width"
+                t-att-height="height"
+            />
+            <div class="hill_sign_canvas_actions">
+                <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    t-on-click="onClear"
+                >
+                    Clear
+                </button>
+            </div>
+        </div>
+    </t>
+</template>

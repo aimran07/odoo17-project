@@ -243,6 +243,8 @@ class SiteReport(models.Model):
             'attachment_id': attachment.id,
         })
 
+        self._ensure_esign_document(attachment)
+
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',
@@ -261,3 +263,22 @@ class SiteReport(models.Model):
         )
         if to_visit_stage:
             self.stage_id = to_visit_stage.id
+
+    def _ensure_esign_document(self, attachment):
+        self.ensure_one()
+        if not attachment:
+            return False
+        document = self.env['hill.document'].search([
+            ('doc_type', '=', 'visit'),
+            ('site_report_id', '=', self.id),
+        ], limit=1)
+        vals = {
+            'doc_type': 'visit',
+            'site_report_id': self.id,
+            'case_id': self.case_id.id,
+            'original_attachment_id': attachment.id,
+        }
+        if document:
+            document.write(vals)
+            return document
+        return self.env['hill.document'].create(vals)

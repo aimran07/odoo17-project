@@ -11,4 +11,6 @@ from . import hill_study_stage
 from . import hill_payment
 from . import hill_invoice
 from . import hill_invoice_line
+from . import hill_document
+from . import hill_signature
 
