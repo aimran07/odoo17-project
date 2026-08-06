@@ -1,6 +1,6 @@
 {
     'name': 'Hill Solution',
-    'version': '17.0.1.3.0',
+    'version': '17.0.1.4.0',
     'category': 'Services',
     'summary': 'Manage service cases with kanban and tree views',
     'description': """
@@ -39,6 +39,9 @@ Features:
         'views/invoice_generation_wizard_views.xml',    # new added
         'report/invoice_report.xml',                    # new added
         'report/invoice_report_template.xml',           # new added
+        'views/hill_document_views.xml',
+        'views/hill_signature_views.xml',
+        'views/hill_sign_wizard_views.xml',
         'views/hill_case_menu.xml',
         'views/portal_templates.xml',
     ],
@@ -49,14 +52,17 @@ Features:
             'hill_solution/static/src/css/hill_photo_widget.css',
             'hill_solution/static/src/css/site_report_wizard.css',
             'hill_solution/static/src/css/visit_date_widget.css',
+            'hill_solution/static/src/css/hill_sign_widget.css',
 
             'hill_solution/static/src/js/hill_document_widget.js',
             'hill_solution/static/src/js/hill_photo_widget.js',
             'hill_solution/static/src/js/visit_date_widget.js',
+            'hill_solution/static/src/js/hill_sign_widget.js',
 
             'hill_solution/static/src/xml/hill_document_widget.xml',
             'hill_solution/static/src/xml/hill_photo_widget.xml',
             'hill_solution/static/src/xml/visit_date_widget.xml',
+            'hill_solution/static/src/xml/hill_sign_widget.xml',
         ],
     },
     'installable': True,

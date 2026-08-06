@@ -1,0 +1,42 @@
+.hill_sign_canvas_container {
+    display: inline-block;
+    border: 1px dashed #c9ccd1;
+    border-radius: 6px;
+    background: #fff;
+    padding: 6px;
+}
+
+.hill_sign_canvas {
+    display: block;
+    cursor: crosshair;
+    touch-action: none;
+    background: #fff;
+}
+
+.hill_sign_canvas_actions {
+    margin-top: 6px;
+    text-align: right;
+}
+
+.hill_sign_suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.hill_sign_suggestion {
+    width: 120px;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #fff;
+    padding: 4px;
+}
+
+.hill_sign_suggestion.selected {
+    border: 2px solid #017e84;
+    box-shadow: 0 0 0 1px #017e84;
+}

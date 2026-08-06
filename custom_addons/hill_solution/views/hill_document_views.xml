@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- List View -->
+    <record id="view_hill_document_tree" model="ir.ui.view">
+        <field name="name">hill.document.tree</field>
+        <field name="model">hill.document</field>
+        <field name="arch" type="xml">
+            <tree string="Documents">
+                <field name="case_number" string="Case Number" />
+                <field name="name" string="Document" />
+                <field name="doc_type" widget="badge" />
+                <field name="state" widget="badge" />
+                <field name="signature_name" string="Signed By" />
+                <field name="sign_date" string="Signed On" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_hill_document_form" model="ir.ui.view">
+        <field name="name">hill.document.form</field>
+        <field name="model">hill.document</field>
+        <field name="arch" type="xml">
+            <form string="Document">
+                <header>
+                    <button name="action_open_sign_wizard" string="Sign"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="state == 'signed'" />
+                    <button name="action_view_signed_pdf" string="View Signed PDF"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state != 'signed'" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="case_number" />
+                        </h1>
+                        <h2>
+                            <field name="name" />
+                        </h2>
+                    </div>
+                    <group>
+                        <group string="Document Info">
+                            <field name="doc_type" />
+                            <field name="state" widget="badge" />
+                            <field name="original_attachment_id" string="Original PDF"
+                                   options="{'no_create': True}" />
+                            <field name="signed_attachment_id" string="Signed PDF"
+                                   readonly="1" options="{'no_create': True}" />
+                        </group>
+                        <group string="Signature">
+                            <field name="signature_name" string="Signed By" />
+                            <field name="signed_by" />
+                            <field name="sign_date" string="Signed On" />
+                            <field name="signature" widget="image" readonly="1" />
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_hill_document_search" model="ir.ui.view">
+        <field name="name">hill.document.search</field>
+        <field name="model">hill.document</field>
+        <field name="arch" type="xml">
+            <search string="Documents">
+                <field name="case_number" />
+                <field name="name" />
+                <field name="signature_name" />
+                <filter name="filter_unsigned" string="Unsigned"
+                        domain="[('state', '=', 'unsigned')]" />
+                <filter name="filter_signed" string="Signed"
+                        domain="[('state', '=', 'signed')]" />
+                <filter name="filter_visit" string="Visit Reports"
+                        domain="[('doc_type', '=', 'visit')]" />
+                <filter name="filter_study" string="Study Reports"
+                        domain="[('doc_type', '=', 'study')]" />
+                <group expand="1" string="Group By">
+                    <filter name="group_case" string="Case Number"
+                            context="{'group_by': 'case_number'}" />
+                    <filter name="group_type" string="Type"
+                            context="{'group_by': 'doc_type'}" />
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_hill_document" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="res_model">hill.document</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'group_by': 'case_number'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No documents yet
+            </p>
+        </field>
+    </record>
+
+    <record id="action_hill_document_unsigned" model="ir.actions.act_window">
+        <field name="name">Unsigned</field>
+        <field name="res_model">hill.document</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state', '=', 'unsigned')]</field>
+        <field name="context">{'group_by': 'case_number'}</field>
+        <field name="view_id" ref="view_hill_document_tree" />
+        <field name="search_view_id" ref="view_hill_document_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No unsigned documents
+            </p>
+        </field>
+    </record>
+
+    <record id="action_hill_document_signed" model="ir.actions.act_window">
+        <field name="name">Signed</field>
+        <field name="res_model">hill.document</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state', '=', 'signed')]</field>
+        <field name="context">{'group_by': 'case_number'}</field>
+        <field name="view_id" ref="view_hill_document_tree" />
+        <field name="search_view_id" ref="view_hill_document_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No signed documents
+            </p>
+        </field>
+    </record>
+</odoo>

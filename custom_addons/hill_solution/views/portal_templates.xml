@@ -484,7 +484,7 @@
 <hr/>
 
                              <!-- Documents -->
-                             <t t-if="case.document_ids">
+                             <t t-if="signed_documents">
                                  <h6 class="text-muted mb-3">Documents</h6>
                                  <div class="table-responsive">
                                      <table class="table table-sm table-hover mb-0">
@@ -492,17 +492,27 @@
                                              <tr>
                                                  <th>Name</th>
                                                  <th>Type</th>
-                                                 <th>Size</th>
+                                                 <th>Status</th>
+                                                 <th class="text-end">Action</th>
                                              </tr>
                                          </thead>
                                          <tbody>
-                                             <t t-foreach="case.document_ids" t-as="document">
-                                                 <tr t-if="document.attachment_id">
+                                             <t t-foreach="signed_documents" t-as="document">
+                                                 <tr>
+                                                     <td><t t-esc="document.name"/></td>
                                                      <td>
-                                                         <a t-att-href="'/web/content/' + str(document.attachment_id.id) + '?download=false'" t-esc="document.name"/>
+                                                         <t t-esc="'Visit Report' if document.doc_type == 'visit' else 'Study Report'"/>
                                                      </td>
-                                                     <td><t t-esc="document.mimetype"/></td>
-                                                     <td><t t-esc="document.file_size"/> bytes</td>
+                                                     <td>
+                                                         <span class="badge bg-success">Signed</span>
+                                                     </td>
+                                                     <td class="text-end">
+                                                         <a t-att-href="'/my/cases/%s/document/%s/download' % (case.id, document.id)"
+                                                            class="btn btn-sm btn-outline-primary">
+                                                             <i class="fa fa-download me-1"/>
+                                                             Download
+                                                         </a>
+                                                     </td>
                                                  </tr>
                                              </t>
                                          </tbody>

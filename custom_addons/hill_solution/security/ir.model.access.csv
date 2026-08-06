@@ -92,4 +92,19 @@ access_invoice_generation_wizard_manager,invoice.generation.wizard.manager,model
 access_invoice_generation_wizard_line_user,invoice.generation.wizard.line.user,model_invoice_generation_wizard_line,hill_solution.hill_case_group,1,1,1,1
 access_invoice_generation_wizard_line_manager,invoice.generation.wizard.line.manager,model_invoice_generation_wizard_line,hill_solution.hill_case_manager,1,1,1,1
 
+access_hill_document_user,hill.document.user,model_hill_document,hill_solution.hill_case_group,1,0,0,0
+access_hill_document_agent,hill.document.agent,model_hill_document,hill_solution.hill_case_agent,1,0,0,0
+access_hill_document_manager,hill.document.manager,model_hill_document,hill_solution.hill_case_manager,1,1,1,1
+access_hill_document_technician,hill.document.technician,model_hill_document,hill_solution.hill_case_technician,1,0,0,0
+
+access_hill_signature_user,hill.signature.user,model_hill_signature,hill_solution.hill_case_group,1,0,0,0
+access_hill_signature_agent,hill.signature.agent,model_hill_signature,hill_solution.hill_case_agent,1,0,0,0
+access_hill_signature_manager,hill.signature.manager,model_hill_signature,hill_solution.hill_case_manager,1,1,1,1
+access_hill_signature_technician,hill.signature.technician,model_hill_signature,hill_solution.hill_case_technician,1,0,0,0
+
+access_hill_sign_wizard_user,hill.sign.wizard.user,model_hill_sign_wizard,hill_solution.hill_case_group,1,0,0,0
+access_hill_sign_wizard_agent,hill.sign.wizard.agent,model_hill_sign_wizard,hill_solution.hill_case_agent,1,0,0,0
+access_hill_sign_wizard_manager,hill.sign.wizard.manager,model_hill_sign_wizard,hill_solution.hill_case_manager,1,1,1,1
+access_hill_sign_wizard_technician,hill.sign.wizard.technician,model_hill_sign_wizard,hill_solution.hill_case_technician,1,0,0,0
+
 

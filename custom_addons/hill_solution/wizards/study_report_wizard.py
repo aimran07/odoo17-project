@@ -64,6 +64,7 @@ class StudyReportWizard(models.TransientModel):
             'attachment_id': attachment.id,
         })
         study.study_report_saved = True
+        study._ensure_esign_document(attachment)
         return {
             'type': 'ir.actions.client',
             'tag': 'display_notification',
@@ -76,8 +77,8 @@ class StudyReportWizard(models.TransientModel):
             },
         }
 
-    def _generate_pdf(self, study):
-        html = self._render_report_html(study)
+    def _generate_pdf(self, study, signature_image=None, signature_name=None):
+        html = self._render_report_html(study, signature_image=signature_image, signature_name=signature_name)
         with tempfile.NamedTemporaryFile(suffix='.html', delete=False, mode='w', encoding='utf-8') as f:
             f.write(html)
             html_path = f.name
@@ -100,7 +101,7 @@ class StudyReportWizard(models.TransientModel):
             if os.path.exists(pdf_path):
                 os.unlink(pdf_path)
 
-    def _render_report_html(self, study):
+    def _render_report_html(self, study, signature_image=None, signature_name=None):
         study.ensure_one()
         partner = ''
         if study.client_type == 'b2b':
@@ -109,6 +110,28 @@ class StudyReportWizard(models.TransientModel):
             first = study.beneficiary_firstname or ''
             last = study.beneficiary_lastname or ''
             partner = ('%s %s' % (first, last)).strip()
+
+        signature_block = ''
+        if signature_image and signature_name:
+            if isinstance(signature_image, bytes):
+                signature_image = signature_image.decode('utf-8')
+            signature_block = '''
+    <div class="section signature-section">
+        <h2>%(signature_label)s</h2>
+        <table>
+            <tr><td class="label">%(signature_name_label)s</td><td class="value">%(signature_name)s</td></tr>
+            <tr><td class="label">%(signature_date_label)s</td><td class="value">%(signature_date)s</td></tr>
+            <tr><td colspan="2"><img src="data:image/png;base64,%(signature_image)s" class="signature-image"/></td></tr>
+        </table>
+    </div>
+''' % {
+                'signature_label': _('Signature'),
+                'signature_name_label': _('Signed By'),
+                'signature_name': signature_name,
+                'signature_date_label': _('Date'),
+                'signature_date': str(fields.Date.today()),
+                'signature_image': signature_image,
+            }
 
         return '''
 <!DOCTYPE html>
@@ -127,6 +150,8 @@ class StudyReportWizard(models.TransientModel):
     .label { font-weight: bold; color: #555; width: 35%%; }
     .value { color: #333; }
     .notes { background: #f9f9f9; padding: 10px; border-radius: 4px; margin-top: 10px; }
+    .signature-section { margin-top: 40px; }
+    .signature-image { max-width: 250px; max-height: 100px; }
 </style>
 </head>
 <body>
@@ -175,6 +200,8 @@ class StudyReportWizard(models.TransientModel):
         <h2>%(study_notes_label)s</h2>
         <div class="notes">%(study_notes)s</div>
     </div>
+
+    %(signature_block)s
 </body>
 </html>
 ''' % {
@@ -218,4 +245,5 @@ class StudyReportWizard(models.TransientModel):
             'study_data': study.study_data or '',
             'study_notes_label': _('Study Notes'),
             'study_notes': study.study_notes or '',
+            'signature_block': signature_block,
         }

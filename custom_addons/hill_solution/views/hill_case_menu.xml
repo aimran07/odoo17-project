@@ -54,6 +54,29 @@
         groups="hill_solution.hill_case_manager"/>
 
     <menuitem
+        id="menu_hill_documents"
+        name="Documents"
+        parent="menu_hill_solution_root"
+        sequence="55"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
+        id="menu_hill_document_unsigned"
+        name="Unsigned"
+        parent="menu_hill_documents"
+        action="action_hill_document_unsigned"
+        sequence="10"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
+        id="menu_hill_document_signed"
+        name="Signed"
+        parent="menu_hill_documents"
+        action="action_hill_document_signed"
+        sequence="20"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
         id="menu_master_calendar"
         name="Master Calendar"
         parent="menu_technician_availability"
@@ -90,5 +113,13 @@
         parent="menu_hill_configuration"
         action="action_hill_manage_clients"
         sequence="20"
+        groups="hill_solution.hill_case_manager"/>
+
+    <menuitem
+        id="menu_hill_signature"
+        name="Signatures"
+        parent="menu_hill_configuration"
+        action="action_hill_signature"
+        sequence="30"
         groups="hill_solution.hill_case_manager"/>
 </odoo>

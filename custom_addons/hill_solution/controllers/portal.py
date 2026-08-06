@@ -221,10 +221,51 @@ class HillCasePortal(CustomerPortal):
             case = self._document_check_access('hill.case', case_id)
         except (AccessError, MissingError):
             return request.redirect('/my/cases')
+        signed_documents = request.env['hill.document'].sudo().search([
+            ('case_id', '=', case.id),
+            ('state', '=', 'signed'),
+        ])
         return request.render('hill_solution.portal_case_detail', {
             'case': case,
+            'signed_documents': signed_documents,
             'page_name': 'cases',
         })
+
+    # ── Case document download ──────────────────────────────────────────────
+
+    @http.route(
+        '/my/cases/<int:case_id>/document/<int:document_id>/download',
+        type='http',
+        auth='user',
+        website=True,
+    )
+    def portal_case_document_download(self, case_id, document_id, **kwargs):
+        try:
+            case = self._document_check_access('hill.case', case_id)
+        except (AccessError, MissingError):
+            return request.redirect('/my/cases')
+
+        document = request.env['hill.document'].sudo().search([
+            ('id', '=', document_id),
+            ('case_id', '=', case.id),
+            ('state', '=', 'signed'),
+        ], limit=1)
+        if not document:
+            return request.redirect('/my/cases/%s' % case.id)
+
+        attachment = document.signed_attachment_id
+        if not attachment:
+            attachment = document.action_generate_signed_pdf()
+        if not attachment:
+            return request.redirect('/my/cases/%s' % case.id)
+
+        headers = [
+            ('Content-Type', 'application/pdf'),
+            ('Content-Length', len(attachment.raw or b'')),
+            ('Content-Disposition',
+             'attachment; filename="%s"' % attachment.name),
+        ]
+        return request.make_response(attachment.raw, headers=headers)
 
     # ── Invoice list ───────────────────────────────────────────────────────
 
