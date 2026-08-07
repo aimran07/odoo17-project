@@ -27,7 +27,7 @@ class HillDocument(models.Model):
     case_id = fields.Many2one(
         'hill.case',
         string='Case',
-        ondelete='cascade',
+        ondelete='cascade',  
     )
     case_number = fields.Char(
         string='Case Number',
@@ -81,6 +81,26 @@ class HillDocument(models.Model):
         string='Signed Document',
         readonly=True,
     )
+
+    associated_document_ids = fields.Many2many(
+        'hill.site.document',
+        compute='_compute_associated_documents',
+        string='Associated Documents',
+    )
+
+    @api.depends('doc_type', 'site_report_id.document_ids', 'study_id.document_ids',
+                 'original_attachment_id')
+    def _compute_associated_documents(self):
+        for rec in self:
+            if rec.doc_type == 'visit':
+                docs = rec.site_report_id.document_ids
+            elif rec.doc_type == 'study':
+                docs = rec.study_id.document_ids
+            else:
+                docs = self.env['hill.site.document']
+            rec.associated_document_ids = docs.filtered(
+                lambda d: d.attachment_id == rec.original_attachment_id
+            )
 
     @api.depends('doc_type', 'site_report_id.name', 'study_id.name')
     def _compute_name(self):
