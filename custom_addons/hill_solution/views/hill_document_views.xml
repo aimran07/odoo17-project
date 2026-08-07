@@ -57,6 +57,11 @@
                             <field name="signature" widget="image" readonly="1" />
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Associated Documents" name="document_documents">
+                            <field name="associated_document_ids" widget="hill_document_widget" readonly="1" />
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" />
